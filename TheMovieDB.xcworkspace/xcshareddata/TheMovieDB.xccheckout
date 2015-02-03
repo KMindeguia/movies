@@ -10,6 +10,8 @@
 	<string>TheMovieDB</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>0EE0ADE7D8D01D8E816DD678416753DB756E28BA</key>
+		<string>github.com:KMindeguia/moviedbapp.git</string>
 		<key>9FCB7729B8EBDADC29DEC82B0C05B98606ED085B</key>
 		<string>ssh://bitbucket.org/KMindeguia/themoviedb.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>TheMovieDB.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>9FCB7729B8EBDADC29DEC82B0C05B98606ED085B</key>
+		<key>0EE0ADE7D8D01D8E816DD678416753DB756E28BA</key>
 		<string>..</string>
+		<key>9FCB7729B8EBDADC29DEC82B0C05B98606ED085B</key>
+		<string>../../TheMovieDB</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://bitbucket.org/KMindeguia/themoviedb.git</string>
+	<string>github.com:KMindeguia/moviedbapp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9FCB7729B8EBDADC29DEC82B0C05B98606ED085B</string>
+	<string>0EE0ADE7D8D01D8E816DD678416753DB756E28BA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0EE0ADE7D8D01D8E816DD678416753DB756E28BA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MovieDB</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
