@@ -24,13 +24,22 @@
 
 // Equivalent of macro in <AssertMacros.h>, without causing compiler warning:
 // "'DebugAssert' is deprecated: first deprecated in OS X 10.8"
+#ifndef AF_Require
+    #define AF_Require(assertion, exceptionLabel)                \
+        do {                                                     \
+            if (__builtin_expect(!(assertion), 0)) {             \
+                goto exceptionLabel;                             \
+            }                                                    \
+        } while (0)
+#endif
+
 #ifndef AF_Require_noErr
-       #define AF_Require_noErr(errorCode, exceptionLabel)                        \
-          do {                                                                    \
-              if (__builtin_expect(0 != (errorCode), 0)) {                        \
-                  goto exceptionLabel;                                            \
-              }                                                                   \
-          } while (0)
+    #define AF_Require_noErr(errorCode, exceptionLabel)          \
+        do {                                                     \
+            if (__builtin_expect(0 != (errorCode), 0)) {         \
+                goto exceptionLabel;                             \
+            }                                                    \
+        } while (0)
 #endif
 
 #if !defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
@@ -60,16 +69,21 @@ static BOOL AFSecKeyIsEqualToKey(SecKeyRef key1, SecKeyRef key2) {
 
 static id AFPublicKeyForCertificate(NSData *certificate) {
     id allowedPublicKey = nil;
-
-    SecCertificateRef allowedCertificate = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certificate);
-    SecCertificateRef allowedCertificates[] = {allowedCertificate};
-    CFArrayRef tempCertificates = CFArrayCreate(NULL, (const void **)allowedCertificates, 1, NULL);
-
-    SecPolicyRef policy = SecPolicyCreateBasicX509();
-    SecTrustRef allowedTrust;
-    AF_Require_noErr(SecTrustCreateWithCertificates(tempCertificates, policy, &allowedTrust), _out);
-
+    SecCertificateRef allowedCertificate;
+    SecCertificateRef allowedCertificates[1];
+    CFArrayRef tempCertificates = nil;
+    SecPolicyRef policy = nil;
+    SecTrustRef allowedTrust = nil;
     SecTrustResultType result;
+
+    allowedCertificate = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certificate);
+    AF_Require(allowedCertificate != NULL, _out);
+
+    allowedCertificates[0] = allowedCertificate;
+    tempCertificates = CFArrayCreate(NULL, (const void **)allowedCertificates, 1, NULL);
+
+    policy = SecPolicyCreateBasicX509();
+    AF_Require_noErr(SecTrustCreateWithCertificates(tempCertificates, policy, &allowedTrust), _out);
     AF_Require_noErr(SecTrustEvaluate(allowedTrust, &result), _out);
 
     allowedPublicKey = (__bridge_transfer id)SecTrustCopyPublicKey(allowedTrust);
@@ -154,6 +168,7 @@ static NSArray * AFPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
 #pragma mark -
 
 @interface AFSecurityPolicy()
+@property (readwrite, nonatomic, assign) AFSSLPinningMode SSLPinningMode;
 @property (readwrite, nonatomic, strong) NSArray *pinnedPublicKeys;
 @end
 
@@ -188,7 +203,7 @@ static NSArray * AFPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
 + (instancetype)policyWithPinningMode:(AFSSLPinningMode)pinningMode {
     AFSecurityPolicy *securityPolicy = [[self alloc] init];
     securityPolicy.SSLPinningMode = pinningMode;
-    securityPolicy.validatesDomainName = YES;
+
     [securityPolicy setPinnedCertificates:[self defaultPinnedCertificates]];
 
     return securityPolicy;
@@ -206,6 +221,20 @@ static NSArray * AFPublicKeyTrustChainForServerTrust(SecTrustRef serverTrust) {
 }
 
 #pragma mark -
+
+- (void)setSSLPinningMode:(AFSSLPinningMode)SSLPinningMode {
+    _SSLPinningMode = SSLPinningMode;
+
+    switch (self.SSLPinningMode) {
+        case AFSSLPinningModePublicKey:
+        case AFSSLPinningModeCertificate:
+            self.validatesDomainName = YES;
+            break;
+        default:
+            self.validatesDomainName = NO;
+            break;
+    }
+}
 
 - (void)setPinnedCertificates:(NSArray *)pinnedCertificates {
     _pinnedCertificates = pinnedCertificates;
