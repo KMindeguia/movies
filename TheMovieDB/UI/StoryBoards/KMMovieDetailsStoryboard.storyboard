@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WKO-j4-iZP">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!-- -->
+        <scene sceneID="fBa-Rr-3mV">
+            <objects>
+                <viewController storyboardIdentifier="KMMovieDetailsViewController" title=" " id="WKO-j4-iZP" customClass="KMMovieDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mcb-74-VQ1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ww2-Xp-Dfw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6YH-DO-1dc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRe-1W-5YA" userLabel="Details Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3l-lx-MTp" userLabel="Network Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="cJb-Fn-IpL" kind="embed" identifier="KMNetworkLoadingViewController" id="kKD-qk-ezN"/>
+                                </connections>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadow_asset_details_page" translatesAutoresizingMaskIntoConstraints="NO" id="yna-QA-Owy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="TeR-BR-8ov"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZr-I0-YQ1" userLabel="Navbar View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enP-SJ-2FK" customClass="KMGillSansLightLabel">
+                                        <rect key="frame" x="119" y="32" width="83" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="vJw-OP-WC1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ww2-Xp-Dfw" firstAttribute="top" secondItem="S3l-lx-MTp" secondAttribute="bottom" id="BXN-Hy-qX2"/>
+                            <constraint firstItem="Ww2-Xp-Dfw" firstAttribute="top" secondItem="aRe-1W-5YA" secondAttribute="bottom" id="CDE-sr-4zu"/>
+                            <constraint firstItem="S3l-lx-MTp" firstAttribute="leading" secondItem="6YH-DO-1dc" secondAttribute="leading" id="Hhc-lk-cWT"/>
+                            <constraint firstItem="S3l-lx-MTp" firstAttribute="top" secondItem="6YH-DO-1dc" secondAttribute="top" id="Ouf-bX-Qz4"/>
+                            <constraint firstItem="aRe-1W-5YA" firstAttribute="leading" secondItem="6YH-DO-1dc" secondAttribute="leading" id="QSt-wv-2Kg"/>
+                            <constraint firstItem="yna-QA-Owy" firstAttribute="top" secondItem="6YH-DO-1dc" secondAttribute="top" id="SrY-Bj-OiF"/>
+                            <constraint firstAttribute="trailing" secondItem="yna-QA-Owy" secondAttribute="trailing" id="Yx6-D6-omg"/>
+                            <constraint firstItem="aRe-1W-5YA" firstAttribute="top" secondItem="6YH-DO-1dc" secondAttribute="top" id="cxc-Vw-VhW"/>
+                            <constraint firstAttribute="trailing" secondItem="S3l-lx-MTp" secondAttribute="trailing" id="df5-Hy-1xU"/>
+                            <constraint firstItem="YZr-I0-YQ1" firstAttribute="leading" secondItem="6YH-DO-1dc" secondAttribute="leading" id="hPl-Kl-hVe"/>
+                            <constraint firstItem="YZr-I0-YQ1" firstAttribute="top" secondItem="6YH-DO-1dc" secondAttribute="top" id="hkk-1S-gCA"/>
+                            <constraint firstItem="yna-QA-Owy" firstAttribute="leading" secondItem="6YH-DO-1dc" secondAttribute="leading" id="nzI-Ra-HLv"/>
+                            <constraint firstAttribute="trailing" secondItem="YZr-I0-YQ1" secondAttribute="trailing" id="q7G-wm-r4a"/>
+                            <constraint firstAttribute="trailing" secondItem="aRe-1W-5YA" secondAttribute="trailing" id="yOg-Qq-0hD"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="detailsContainerView" destination="aRe-1W-5YA" id="Uov-W8-QmX"/>
+                        <outlet property="navigationBarView" destination="YZr-I0-YQ1" id="q2h-px-Ocb"/>
+                        <outlet property="networkLoadingContainerView" destination="S3l-lx-MTp" id="0Uw-13-uDW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fMZ-vm-CLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="254"/>
+        </scene>
+        <!--Network Loading View Controller-->
+        <scene sceneID="tqf-nS-P4o">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="cJb-Fn-IpL" customClass="KMNetworkLoadingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mvb-Ja-3BL"/>
+                        <viewControllerLayoutGuide type="bottom" id="al6-za-SDk"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yo9-9J-3Ap">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0B-zc-lNq" userLabel="LoadingView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGg-iM-oaq" customClass="KMActivityIndicator">
+                                        <rect key="frame" x="132" y="245" width="56" height="52"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uv1-Ge-XAD" userLabel="Loading Label">
+                                        <rect key="frame" x="78" y="309" width="165" height="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvL-JL-bt6" userLabel="ErrorView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGv-KA-Awp" userLabel="RefreshButton">
+                                        <rect key="frame" x="135" y="247" width="50" height="48"/>
+                                        <state key="normal" image="refresh_button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retryRequest:" destination="cJb-Fn-IpL" eventType="touchUpInside" id="Rxt-R7-yEf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Retry!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDm-mh-bvA" userLabel="Error Label">
+                                        <rect key="frame" x="123" y="307" width="78" height="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEI-kn-dgl" userLabel="No Content View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Sorry, there are no shots around you yet. Go out and take some! \o/" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="213" translatesAutoresizingMaskIntoConstraints="NO" id="5gb-ec-bEy" userLabel="No content Label">
+                                        <rect key="frame" x="54" y="280" width="213" height="61"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzb-wC-thb">
+                                        <rect key="frame" x="135" y="230" width="50" height="50"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="LGg-iM-oaq" id="8Yv-FX-a08"/>
+                        <outlet property="errorView" destination="uvL-JL-bt6" id="evf-3D-lsp"/>
+                        <outlet property="loadingView" destination="Q0B-zc-lNq" id="2ou-G9-5Ed"/>
+                        <outlet property="noContentView" destination="EEI-kn-dgl" id="IcP-k2-ZSj"/>
+                        <outlet property="refreshButton" destination="AGv-KA-Awp" id="nvI-f3-9CH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdb-dz-3XC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674" y="254"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="refresh_button" width="48" height="48"/>
+        <image name="shadow_asset_details_page" width="160" height="48"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
