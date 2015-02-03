@@ -1,4 +1,4 @@
-# moviedbapp
+# MovieDBApp
 MovieDB is a sample app implementing several UI patterns.
 I was firstly built to test a few different implementations of a details page.
 
