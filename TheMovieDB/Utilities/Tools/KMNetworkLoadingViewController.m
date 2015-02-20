@@ -33,6 +33,12 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.activityIndicatorView startAnimating];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -43,7 +49,7 @@
 {
     self.errorView.hidden = YES;
     self.activityIndicatorView.color = [UIColor colorWithRed:232.0/255.0f green:35.0/255.0f blue:111.0/255.0f alpha:1.0];
-    [self.activityIndicatorView startAnimating];}
+}
 
 - (void)showErrorView
 {

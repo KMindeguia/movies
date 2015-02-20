@@ -28,41 +28,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol AFURLResponseSerialization, AFImageCache;
-
 /**
  This category adds methods to the UIKit framework's `UIButton` class. The methods in this category provide support for loading remote images and background images asynchronously from a URL.
- 
- @warning Compound values for control `state` (such as `UIControlStateHighlighted | UIControlStateDisabled`) are unsupported.
  */
 @interface UIButton (AFNetworking)
-
-///----------------------------
-/// @name Accessing Image Cache
-///----------------------------
-
-/**
- The image cache used to improve image loadiing performance on scroll views. By default, `UIButton` will use the `sharedImageCache` of `UIImageView`.
- */
-+ (id <AFImageCache>)sharedImageCache;
-
-/**
- Set the cache used for image loading.
-
- @param imageCache The image cache.
- */
-+ (void)setSharedImageCache:(id <AFImageCache>)imageCache;
-
-///------------------------------------
-/// @name Accessing Response Serializer
-///------------------------------------
-
-/**
- The response serializer used to create an image representation from the server response and response data. By default, this is an instance of `AFImageResponseSerializer`.
-
- @discussion Subclasses of `AFImageResponseSerializer` could be used to perform post-processing, such as color correction, face detection, or other effects. See https://github.com/AFNetworking/AFCoreImageSerializer
- */
-@property (nonatomic, strong) id <AFURLResponseSerialization> imageResponseSerializer;
 
 ///--------------------
 /// @name Setting Image
@@ -108,7 +77,7 @@
 - (void)setImageForState:(UIControlState)state
           withURLRequest:(NSURLRequest *)urlRequest
         placeholderImage:(UIImage *)placeholderImage
-                 success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image))success
+                 success:(void (^)(NSHTTPURLResponse *response, UIImage *image))success
                  failure:(void (^)(NSError *error))failure;
 
 
@@ -154,7 +123,7 @@
 - (void)setBackgroundImageForState:(UIControlState)state
                     withURLRequest:(NSURLRequest *)urlRequest
                   placeholderImage:(UIImage *)placeholderImage
-                           success:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image))success
+                           success:(void (^)(NSHTTPURLResponse *response, UIImage *image))success
                            failure:(void (^)(NSError *error))failure;
 
 
@@ -163,18 +132,14 @@
 ///------------------------------
 
 /**
- Cancels any executing image operation for the specified control state of the receiver, if one exists.
- 
- @param state The control state.
+ Cancels any executing image operation for the receiver, if one exists.
  */
-- (void)cancelImageRequestOperationForState:(UIControlState)state;
+- (void)cancelImageRequestOperation;
 
 /**
- Cancels any executing background image operation for the specified control state of the receiver, if one exists.
- 
- @param state The control state.
+ Cancels any executing background image operation for the receiver, if one exists.
  */
-- (void)cancelBackgroundImageRequestOperationForState:(UIControlState)state;
+- (void)cancelBackgroundImageRequestOperation;
 
 @end
 

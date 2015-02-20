@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "KMDetailsPageView.h"
 #import "KMMovie.h"
+#import "KMGillSansLabel.h"
 #import "KMNetworkLoadingViewController.h"
 
-@interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, KMNetworkLoadingViewDelegate, KMDetailsPageDelegate, KIImagePagerDelegate, KIImagePagerDataSource>
+@interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, KMNetworkLoadingViewDelegate, KMDetailsPageDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *navigationBarView;
-@property (weak, nonatomic) IBOutlet UIView *detailsContainerView;
 @property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
+@property (weak, nonatomic) IBOutlet KMDetailsPageView* detailsPageView;
+@property (weak, nonatomic) IBOutlet KMGillSansLightLabel *navBarTitleLabel;
 
 @property (strong, nonatomic) KMMovie* movieDetails;
 

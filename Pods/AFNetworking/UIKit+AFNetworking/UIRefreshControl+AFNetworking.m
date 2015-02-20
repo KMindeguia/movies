@@ -41,14 +41,16 @@
     [notificationCenter removeObserver:self name:AFNetworkingTaskDidCompleteNotification object:nil];
 
     if (task) {
-        if (task.state == NSURLSessionTaskStateRunning) {
-            [self beginRefreshing];
+        if (task.state != NSURLSessionTaskStateCompleted) {
+            if (task.state == NSURLSessionTaskStateRunning) {
+                [self beginRefreshing];
+            } else {
+                [self endRefreshing];
+            }
 
             [notificationCenter addObserver:self selector:@selector(af_beginRefreshing) name:AFNetworkingTaskDidResumeNotification object:task];
             [notificationCenter addObserver:self selector:@selector(af_endRefreshing) name:AFNetworkingTaskDidCompleteNotification object:task];
             [notificationCenter addObserver:self selector:@selector(af_endRefreshing) name:AFNetworkingTaskDidSuspendNotification object:task];
-        } else {
-            [self endRefreshing];
         }
     }
 }

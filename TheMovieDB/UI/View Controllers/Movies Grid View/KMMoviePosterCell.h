@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EGOImageView.h"
 
 @interface KMMoviePosterCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet EGOImageView *moviePosterImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *moviePosterImageView;
 
 @end

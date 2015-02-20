@@ -38,7 +38,7 @@
 - (void)setupNavigationTitleLabelStyle
 {
     NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
-    [titleBarAttributes setValue:[UIFont fontWithName:@"GillSans-Light" size:22] forKey:NSFontAttributeName];
+    [titleBarAttributes setValue:[UIFont fontWithName:@"GillSans-Light" size:20] forKey:NSFontAttributeName];
     [titleBarAttributes setValue:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];

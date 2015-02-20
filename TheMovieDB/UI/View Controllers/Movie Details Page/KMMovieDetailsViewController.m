@@ -18,13 +18,14 @@
 #import "KMComposeCommentCell.h"
 #import "KMMovieDetailsSource.h"
 #import "KMSimilarMoviesSource.h"
-#import "KMMoviesCollectionViewController.h"
+#import "KMSimilarMoviesViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface KMMovieDetailsViewController ()
 
 @property (nonatomic, strong) NSMutableArray* similarMoviesDataSource;
-@property (nonatomic, strong) KMDetailsPageView* detailsPageView;
 @property (nonatomic, strong) KMNetworkLoadingViewController* networkLoadingViewController;
+@property (assign) CGPoint scrollViewDragPoint;
 
 @end
 
@@ -55,9 +56,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self setupNavbarButtons];
     [self requestMovieDetails];
-    [self requestSimilarMovies];
+    [self setupDetailsPageView];
 	// Do any additional setup after loading the view.
 }
 
@@ -73,16 +75,10 @@
 
 - (void)setupDetailsPageView
 {
-    [super viewDidLoad];
-    self.detailsPageView = [[KMDetailsPageView alloc] initWithFrame:self.detailsContainerView.bounds];
     self.detailsPageView.tableViewDataSource = self;
     self.detailsPageView.tableViewDelegate = self;
     self.detailsPageView.delegate = self;
-    self.detailsPageView.parallaxScrollFactor = 0.4f;
-    self.detailsPageView.defaultimagePagerHeight = 350;
-    self.detailsPageView.headerFade = self.detailsPageView.defaultimagePagerHeight - self.navigationBarView.frame.size.height;
-    [self.detailsContainerView addSubview:self.detailsPageView];
-    self.detailsPageView.headerView = self.navigationBarView;
+    self.detailsPageView.tableViewSeparatorColor = [UIColor clearColor];
 }
 
 - (void)setupNavbarButtons
@@ -93,11 +89,7 @@
     [buttonBack addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:buttonBack];
     
-    UIButton *buttonLike = [UIButton buttonWithType:UIButtonTypeCustom];
-    buttonLike.frame = CGRectMake(285, 31, 22, 22);
-    [buttonLike setImage:[UIImage imageNamed:@"like_icon"] forState:UIControlStateNormal];
-    [buttonLike addTarget:self action:@selector(popViewController:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:buttonLike];
+    self.navBarTitleLabel.text = self.movieDetails.movieTitle;
 }
 
 #pragma mark -
@@ -153,16 +145,17 @@
     {
         if (!self.similarMoviesDataSource)
             self.similarMoviesDataSource = [[NSMutableArray alloc] init];
+        
         self.similarMoviesDataSource = [NSMutableArray arrayWithArray:data];
-        [self.detailsPageView.tableView reloadData];
+        [self.detailsPageView reloadData];
+        [self hideLoadingView];
     }
 }
 
 - (void)processMovieDetailsData:(KMMovie*)data
 {
     self.movieDetails = data;
-    [self setupDetailsPageView];
-    [self hideLoadingView];
+    [self requestSimilarMovies];
 }
 
 #pragma mark -
@@ -170,7 +163,7 @@
 
 - (void)viewAllSimilarMoviesButtonPressed:(id)sender
 {
-    KMMoviesCollectionViewController* viewController = (KMMoviesCollectionViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMMoviesGridViewStoryboard" class:[KMMoviesCollectionViewController class]];
+    KMSimilarMoviesViewController* viewController = (KMSimilarMoviesViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMSimilarMoviesStoryboard" class:[KMSimilarMoviesViewController class]];
     viewController.moviesDataSource = self.similarMoviesDataSource;
     [self.navigationController pushViewController:viewController animated:YES];
 }
@@ -195,6 +188,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // A much nicer way to deal with this would be to extract this code to a helper class, that would take care of building the cells.
     UITableViewCell* cell = nil;
     
     switch (indexPath.row) {
@@ -202,12 +196,13 @@
         {
             KMMovieDetailsCell *detailsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCell"];
             
-            if(detailsCell == nil){
+            if(detailsCell == nil)
                 detailsCell = [KMMovieDetailsCell movieDetailsCell];
-                [detailsCell.posterImageView setImageURL:[NSURL URLWithString:self.movieDetails.movieThumbnailBackdropImageUrl]];
-                detailsCell.movieTitleLabel.text = self.movieDetails.movieTitle;
-                detailsCell.genresLabel.text = self.movieDetails.movieGenresString;
-            }
+            
+            [detailsCell.posterImageView setImageURL:[NSURL URLWithString:self.movieDetails.movieThumbnailBackdropImageUrl]];
+            detailsCell.movieTitleLabel.text = self.movieDetails.movieTitle;
+            detailsCell.genresLabel.text = self.movieDetails.movieGenresString;
+            
             cell = detailsCell;
         }
             break;
@@ -215,10 +210,11 @@
         {
             KMMovieDetailsDescriptionCell *descriptionCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsDescriptionCell"];
             
-            if(descriptionCell == nil){
+            if(descriptionCell == nil)
                 descriptionCell = [KMMovieDetailsDescriptionCell movieDetailsDescriptionCell];
-                descriptionCell.movieDescriptionLabel.text = self.movieDetails.movieSynopsis;
-            }
+            
+            descriptionCell.movieDescriptionLabel.text = self.movieDetails.movieSynopsis;
+            
             cell = descriptionCell;
         }
             break;
@@ -226,10 +222,11 @@
         {
             KMMovieDetailsSimilarMoviesCell *contributionCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsSimilarMoviesCell"];
             
-            if(contributionCell == nil){
+            if(contributionCell == nil)
                 contributionCell = [KMMovieDetailsSimilarMoviesCell movieDetailsSimilarMoviesCell];
-                [contributionCell.viewAllSimilarMoviesButton addTarget:self action:@selector(viewAllSimilarMoviesButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-            }
+            
+            [contributionCell.viewAllSimilarMoviesButton addTarget:self action:@selector(viewAllSimilarMoviesButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
             cell = contributionCell;
         }
             break;
@@ -237,12 +234,13 @@
         {
             KMMovieDetailsPopularityCell *popularityCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsPopularityCell"];
             
-            if(popularityCell == nil){
+            if(popularityCell == nil)
                 popularityCell = [KMMovieDetailsPopularityCell movieDetailsPopularityCell];
-                popularityCell.voteAverageLabel.text = self.movieDetails.movieVoteAverage;
-                popularityCell.voteCountLabel.text = self.movieDetails.movieVoteCount;
-                popularityCell.popularityLabel.text = self.movieDetails.moviePopularity;
-            }
+            
+            popularityCell.voteAverageLabel.text = self.movieDetails.movieVoteAverage;
+            popularityCell.voteCountLabel.text = self.movieDetails.movieVoteCount;
+            popularityCell.popularityLabel.text = self.movieDetails.moviePopularity;
+            
             cell = popularityCell;
         }
             break;
@@ -250,12 +248,13 @@
         {
             KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
             
-            if(commentsCell == nil){
+            if(commentsCell == nil)
                 commentsCell = [KMMovieDetailsCommentsCell movieDetailsCommentsCell];
-                commentsCell.usernameLabel.text = @"Kevin Mindeguia";
-                commentsCell.commentLabel.text = @"Macaroon croissant I love tiramisu I love chocolate bar chocolate bar. Cheesecake dessert croissant sweet. Muffin gummies gummies biscuit bear claw. ";
-                [commentsCell.cellImageView setImage:[UIImage imageNamed:@"kevin_avatar"]];
-            }
+            
+            commentsCell.usernameLabel.text = @"Kevin Mindeguia";
+            commentsCell.commentLabel.text = @"Macaroon croissant I love tiramisu I love chocolate bar chocolate bar. Cheesecake dessert croissant sweet. Muffin gummies gummies biscuit bear claw. ";
+            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"kevin_avatar"]];
+            
             cell = commentsCell;
         }
             break;
@@ -263,12 +262,13 @@
         {
             KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
             
-            if(commentsCell == nil){
+            if(commentsCell == nil)
                 commentsCell = [KMMovieDetailsCommentsCell movieDetailsCommentsCell];
-                commentsCell.usernameLabel.text = @"Andrew Arran";
-                commentsCell.commentLabel.text = @"Chocolate bar carrot cake candy canes oat cake dessert. Topping bear claw dragée. Sugar plum jelly cupcake.";
-                [commentsCell.cellImageView setImage:[UIImage imageNamed:@"scrat_avatar"]];
-            }
+            
+            commentsCell.usernameLabel.text = @"Andrew Arran";
+            commentsCell.commentLabel.text = @"Chocolate bar carrot cake candy canes oat cake dessert. Topping bear claw dragée. Sugar plum jelly cupcake.";
+            [commentsCell.cellImageView setImage:[UIImage imageNamed:@"scrat_avatar"]];
+            
             cell = commentsCell;
         }
             break;
@@ -276,9 +276,9 @@
         {
             KMMovieDetailsViewAllCommentsCell *viewAllCommentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsViewAllCommentsCell"];
             
-            if(viewAllCommentsCell == nil){
+            if(viewAllCommentsCell == nil)
                 viewAllCommentsCell = [KMMovieDetailsViewAllCommentsCell movieDetailsAllCommentsCell];
-            }
+            
             cell = viewAllCommentsCell;
         }
             break;
@@ -286,9 +286,9 @@
         {
             KMComposeCommentCell *composeCommentCell = [tableView dequeueReusableCellWithIdentifier:@"KMComposeCommentCell"];
             
-            if(composeCommentCell == nil){
+            if(composeCommentCell == nil)
                 composeCommentCell = [KMComposeCommentCell composeCommentsCell];
-            }
+            
             cell = composeCommentCell;
         }
             break;
@@ -320,7 +320,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // A much nicer way to deal with this would be to extract this code to a helper class, that would take care of building the cells.
     CGFloat height = 0;
+    
     if (indexPath.row == 0)
         height = 120;
     else if (indexPath.row == 1)
@@ -371,17 +373,31 @@
 #pragma mark -
 #pragma mark KMDetailsPageDelegate
 
-- (void)detailsPage:(KMDetailsPageView *)detailsPageView imagePagerDidLoad:(KIImagePager *)imagePager
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    imagePager.dataSource = self;
-    imagePager.delegate = self;
-    imagePager.pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
-    imagePager.pageControl.pageIndicatorTintColor = [UIColor blackColor];
-    imagePager.slideshowTimeInterval = 0.0f;
-    imagePager.slideshowShouldCallScrollToDelegate = YES;
+    self.scrollViewDragPoint = scrollView.contentOffset;
+}
+
+- (CGPoint)detailsPage:(KMDetailsPageView *)detailsPageView tableViewWillBeginDragging:(UITableView *)tableView;
+{
+    return self.scrollViewDragPoint;
+}
+
+- (UIViewContentMode)contentModeForImage:(UIImageView *)imageView
+{
+    return UIViewContentModeTop;
+}
+
+- (UIImageView*)detailsPage:(KMDetailsPageView*)detailsPageView imageDataForImageView:(UIImageView*)imageView;
+{
+    __block UIImageView* blockImageView = imageView;
     
-    self.detailsPageView.nbImages = [self.detailsPageView.imagePager.dataSource.arrayWithImages count];
-    self.detailsPageView.currentImage = 0;
+    [imageView sd_setImageWithURL:[NSURL URLWithString:[self.movieDetails movieOriginalBackdropImageUrl]] completed:^ (UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if ([detailsPageView.delegate respondsToSelector:@selector(headerImageViewFinishedLoading:)])
+            [detailsPageView.delegate headerImageViewFinishedLoading:blockImageView];
+    }];
+    
+    return imageView;
 }
 
 - (void)detailsPage:(KMDetailsPageView *)detailsPageView tableViewDidLoad:(UITableView *)tableView
@@ -396,19 +412,6 @@
 }
 
 #pragma mark -
-#pragma mark KIImagePager DataSource
-
-- (NSArray *) arrayWithImages
-{
-    return @[[NSURL URLWithString:self.movieDetails.movieOriginalPosterImageUrl]];
-}
-
-- (UIViewContentMode) contentModeForImage:(NSUInteger)image
-{
-    return UIViewContentModeScaleAspectFill;
-}
-
-#pragma mark -
 #pragma mark KMNetworkLoadingViewController Methods
 
 - (void)hideLoadingView
@@ -420,6 +423,7 @@
          [self.networkLoadingViewController removeFromParentViewController];
          self.networkLoadingContainerView = nil;
      }];
+    self.detailsPageView.navBarView = self.navigationBarView;
 }
 
 #pragma mark -
