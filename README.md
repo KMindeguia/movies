@@ -5,7 +5,7 @@ You'll find tableviews, details pages, collection views, cool loading animations
 
 I thought it'd be nice to share some of these ideas. You guys have fun with it! 
 
-You can follow me on Twitter @KMindeguia.
+You can follow me on Twitter [@KMindeguia](https://twitter.com/KMindeguia).
 
 ![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc1.png?raw=true "Optional title")
 ![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc2.png?raw=true "Optional title")
