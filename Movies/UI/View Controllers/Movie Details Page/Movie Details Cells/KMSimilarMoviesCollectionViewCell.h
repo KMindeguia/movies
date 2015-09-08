@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EGOImageView.h"
 
 @interface KMSimilarMoviesCollectionViewCell : UICollectionViewCell
 
 + (KMSimilarMoviesCollectionViewCell*) similarMoviesCollectionViewCell;
 
-@property (weak, nonatomic) IBOutlet EGOImageView *cellImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 @property (weak, nonatomic) IBOutlet UIView *cellBackgroundView;
 
 @end

@@ -38,11 +38,6 @@
 		7B329E5B18A10B28004D77BF /* KMSimilarMoviesSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E5A18A10B28004D77BF /* KMSimilarMoviesSource.m */; };
 		7B329E6718A10EA1004D77BF /* KMDiscoverListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E6418A10EA1004D77BF /* KMDiscoverListCell.m */; };
 		7B329E6818A10EA1004D77BF /* KMDiscoverListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E6618A10EA1004D77BF /* KMDiscoverListViewController.m */; };
-		7B329E7418A10EDF004D77BF /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E6B18A10EDF004D77BF /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7B329E7518A10EDF004D77BF /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E6D18A10EDF004D77BF /* EGOImageButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7B329E7618A10EDF004D77BF /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E6F18A10EDF004D77BF /* EGOImageLoadConnection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7B329E7718A10EDF004D77BF /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E7118A10EDF004D77BF /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7B329E7818A10EDF004D77BF /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E7318A10EDF004D77BF /* EGOImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7B329E7C18A10F37004D77BF /* KMMovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E7B18A10F37004D77BF /* KMMovieDetailsViewController.m */; };
 		7B329E7F18A11278004D77BF /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E7E18A11278004D77BF /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7B329E8618A11E72004D77BF /* KMMovieDetailsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E8518A11E72004D77BF /* KMMovieDetailsSource.m */; };
@@ -53,7 +48,6 @@
 		7B329E9918A123B5004D77BF /* KMMovieDetailsSimilarMoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B329E9218A123B5004D77BF /* KMMovieDetailsSimilarMoviesCell.xib */; };
 		7B329E9A18A123B5004D77BF /* KMMovieDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E9418A123B5004D77BF /* KMMovieDetailsCell.m */; };
 		7B329E9B18A123B5004D77BF /* KMMovieDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B329E9518A123B5004D77BF /* KMMovieDetailsCell.xib */; };
-		7B329EA218A1276B004D77BF /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329EA118A1276B004D77BF /* KIImagePager.m */; };
 		7B329EA618A127E4004D77BF /* KMMovieDetailsDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329EA418A127E4004D77BF /* KMMovieDetailsDescriptionCell.m */; };
 		7B329EA718A127E4004D77BF /* KMMovieDetailsDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B329EA518A127E4004D77BF /* KMMovieDetailsDescriptionCell.xib */; };
 		7B329EA918A13174004D77BF /* KMSimilarMoviesSourceJsonPattern.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B329EA818A13174004D77BF /* KMSimilarMoviesSourceJsonPattern.json */; };
@@ -137,16 +131,6 @@
 		7B329E6418A10EA1004D77BF /* KMDiscoverListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMDiscoverListCell.m; sourceTree = "<group>"; };
 		7B329E6518A10EA1004D77BF /* KMDiscoverListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDiscoverListViewController.h; sourceTree = "<group>"; };
 		7B329E6618A10EA1004D77BF /* KMDiscoverListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMDiscoverListViewController.m; sourceTree = "<group>"; };
-		7B329E6A18A10EDF004D77BF /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
-		7B329E6B18A10EDF004D77BF /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
-		7B329E6C18A10EDF004D77BF /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
-		7B329E6D18A10EDF004D77BF /* EGOImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageButton.m; sourceTree = "<group>"; };
-		7B329E6E18A10EDF004D77BF /* EGOImageLoadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoadConnection.h; sourceTree = "<group>"; };
-		7B329E6F18A10EDF004D77BF /* EGOImageLoadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoadConnection.m; sourceTree = "<group>"; };
-		7B329E7018A10EDF004D77BF /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
-		7B329E7118A10EDF004D77BF /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
-		7B329E7218A10EDF004D77BF /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
-		7B329E7318A10EDF004D77BF /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
 		7B329E7A18A10F37004D77BF /* KMMovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMovieDetailsViewController.h; sourceTree = "<group>"; };
 		7B329E7B18A10F37004D77BF /* KMMovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMovieDetailsViewController.m; sourceTree = "<group>"; };
 		7B329E7D18A11278004D77BF /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
@@ -163,8 +147,6 @@
 		7B329E9318A123B5004D77BF /* KMMovieDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMovieDetailsCell.h; sourceTree = "<group>"; };
 		7B329E9418A123B5004D77BF /* KMMovieDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMovieDetailsCell.m; sourceTree = "<group>"; };
 		7B329E9518A123B5004D77BF /* KMMovieDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMMovieDetailsCell.xib; sourceTree = "<group>"; };
-		7B329EA018A1276B004D77BF /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
-		7B329EA118A1276B004D77BF /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
 		7B329EA318A127E4004D77BF /* KMMovieDetailsDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMovieDetailsDescriptionCell.h; sourceTree = "<group>"; };
 		7B329EA418A127E4004D77BF /* KMMovieDetailsDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMovieDetailsDescriptionCell.m; sourceTree = "<group>"; };
 		7B329EA518A127E4004D77BF /* KMMovieDetailsDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMMovieDetailsDescriptionCell.xib; sourceTree = "<group>"; };
@@ -435,23 +417,6 @@
 			path = "Discover List";
 			sourceTree = "<group>";
 		};
-		7B329E6918A10EDF004D77BF /* EGOImage */ = {
-			isa = PBXGroup;
-			children = (
-				7B329E6A18A10EDF004D77BF /* EGOCache.h */,
-				7B329E6B18A10EDF004D77BF /* EGOCache.m */,
-				7B329E6C18A10EDF004D77BF /* EGOImageButton.h */,
-				7B329E6D18A10EDF004D77BF /* EGOImageButton.m */,
-				7B329E6E18A10EDF004D77BF /* EGOImageLoadConnection.h */,
-				7B329E6F18A10EDF004D77BF /* EGOImageLoadConnection.m */,
-				7B329E7018A10EDF004D77BF /* EGOImageLoader.h */,
-				7B329E7118A10EDF004D77BF /* EGOImageLoader.m */,
-				7B329E7218A10EDF004D77BF /* EGOImageView.h */,
-				7B329E7318A10EDF004D77BF /* EGOImageView.m */,
-			);
-			path = EGOImage;
-			sourceTree = "<group>";
-		};
 		7B329E7918A10F27004D77BF /* Movie Details Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,15 +468,6 @@
 			path = "Movie Details Cells";
 			sourceTree = "<group>";
 		};
-		7B329E9F18A1276B004D77BF /* KIImagePager */ = {
-			isa = PBXGroup;
-			children = (
-				7B329EA018A1276B004D77BF /* KIImagePager.h */,
-				7B329EA118A1276B004D77BF /* KIImagePager.m */,
-			);
-			path = KIImagePager;
-			sourceTree = "<group>";
-		};
 		7BA9591F18A0261B0004A8A9 /* Discover List */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,8 +481,6 @@
 		7BA9592518A0280B0004A8A9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				7B329E9F18A1276B004D77BF /* KIImagePager */,
-				7B329E6918A10EDF004D77BF /* EGOImage */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -741,7 +695,6 @@
 			files = (
 				7B2F31DB18A017C1008CD0DA /* KMSourceConfig.m in Sources */,
 				7BFB81EF1B3C1739001030AC /* KMNetworkLoadingViewController.m in Sources */,
-				7B329E7618A10EDF004D77BF /* EGOImageLoadConnection.m in Sources */,
 				7B0CD95018A2413E007A66A6 /* KMMoviePosterCell.m in Sources */,
 				7B2F31EE18A018A3008CD0DA /* KM_NSURL+Parameters.m in Sources */,
 				7B2F31D018A01717008CD0DA /* UIFont+GillSansFonts.m in Sources */,
@@ -749,14 +702,10 @@
 				7B329E7C18A10F37004D77BF /* KMMovieDetailsViewController.m in Sources */,
 				7B2F31EF18A018A3008CD0DA /* NSBundle+Loader.m in Sources */,
 				7B329E8618A11E72004D77BF /* KMMovieDetailsSource.m in Sources */,
-				7B329E7418A10EDF004D77BF /* EGOCache.m in Sources */,
 				7BFB810A1B3C0BA1001030AC /* KMActivityIndicator.m in Sources */,
-				7B329E7818A10EDF004D77BF /* EGOImageView.m in Sources */,
 				7BFB810C1B3C0BA1001030AC /* KMIndexedCollectionView.m in Sources */,
 				7B22AD9F18A18BDE00022013 /* KMMovieDetailsViewAllCommentsCell.m in Sources */,
 				7B2F31C118A011FE008CD0DA /* KMAppDelegate.m in Sources */,
-				7B329E7518A10EDF004D77BF /* EGOImageButton.m in Sources */,
-				7B329EA218A1276B004D77BF /* KIImagePager.m in Sources */,
 				7B2F31EC18A018A3008CD0DA /* KM_NSDictionary+SafeValues.m in Sources */,
 				7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */,
 				7B329E5B18A10B28004D77BF /* KMSimilarMoviesSource.m in Sources */,
@@ -767,7 +716,6 @@
 				7B2F31EB18A018A3008CD0DA /* KM_NSArray+SafeValues.m in Sources */,
 				7B2F31D518A0176D008CD0DA /* KMMovie.m in Sources */,
 				7B2F31D818A01794008CD0DA /* KMBaseSource.m in Sources */,
-				7B329E7718A10EDF004D77BF /* EGOImageLoader.m in Sources */,
 				7B66F5AC18A1729B0070DEB4 /* KMMovieDetailsPopularityCell.m in Sources */,
 				7B329E9A18A123B5004D77BF /* KMMovieDetailsCell.m in Sources */,
 				7B329E7F18A11278004D77BF /* NSString+MD5.m in Sources */,
@@ -987,6 +935,7 @@
 				7BFB82161B3C1827001030AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

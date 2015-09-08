@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 iKode Ltd. All rights reserved.
 //
 
+#import <UIImageView+WebCache.h>
 #import "KMDiscoverListViewController.h"
 #import "StoryBoardUtilities.h"
 #import "KMDiscoverListCell.h"
@@ -143,7 +144,7 @@
 {
     KMDiscoverListCell* cell = (KMDiscoverListCell*)[tableView dequeueReusableCellWithIdentifier:@"DiscoverListCell" forIndexPath:indexPath];
     
-    [cell.timelineImageView setImageURL:[NSURL URLWithString:[[self.dataSource objectAtIndex:indexPath.row] movieOriginalBackdropImageUrl]]];
+    [cell.timelineImageView sd_setImageWithURL:[NSURL URLWithString:[[self.dataSource objectAtIndex:indexPath.row] movieOriginalBackdropImageUrl]]];
     [cell.titleLabel setText:[[self.dataSource objectAtIndex:indexPath.row] movieTitle]];
     
     return cell;

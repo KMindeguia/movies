@@ -202,7 +202,7 @@
             if(detailsCell == nil)
                 detailsCell = [KMMovieDetailsCell movieDetailsCell];
             
-            [detailsCell.posterImageView setImageURL:[NSURL URLWithString:self.movieDetails.movieThumbnailBackdropImageUrl]];
+            [detailsCell.posterImageView sd_setImageWithURL:[NSURL URLWithString:self.movieDetails.movieThumbnailBackdropImageUrl]];
             detailsCell.movieTitleLabel.text = self.movieDetails.movieTitle;
             detailsCell.genresLabel.text = self.movieDetails.movieGenresString;
             
@@ -394,7 +394,7 @@
 {
     KMSimilarMoviesCollectionViewCell* cell = (KMSimilarMoviesCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"KMSimilarMoviesCollectionViewCell" forIndexPath:indexPath];
     
-    [cell.cellImageView setImageURL:[NSURL URLWithString:[[self.similarMoviesDataSource objectAtIndex:indexPath.row] movieThumbnailPosterImageUrl]]];
+    [cell.cellImageView sd_setImageWithURL:[NSURL URLWithString:[[self.similarMoviesDataSource objectAtIndex:indexPath.row] movieThumbnailPosterImageUrl]]];
     
     return cell;
 }

@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EGOImageView.h"
 
 @interface KMMovieDetailsCommentsCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
-@property (weak, nonatomic) IBOutlet EGOImageView *cellImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 
 + (KMMovieDetailsCommentsCell*) movieDetailsCommentsCell;
 

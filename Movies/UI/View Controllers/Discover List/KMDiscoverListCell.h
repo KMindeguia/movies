@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EGOImageView.h"
 #import "KMGillSansLabel.h"
 
 @interface KMDiscoverListCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet EGOImageView *timelineImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *timelineImageView;
 @property (weak, nonatomic) IBOutlet KMGillSansLightLabel *titleLabel;
 
 @end
