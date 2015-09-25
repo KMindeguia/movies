@@ -7,11 +7,6 @@ I thought it'd be nice to share some of these ideas. You guys have fun with it!
 
 You can follow me on Twitter [@KMindeguia](https://twitter.com/KMindeguia).
 
-![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc1.png?raw=true "Optional title")
-![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc2.png?raw=true "Optional title")
-![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc3.png?raw=true "Optional title")
-![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc4.png?raw=true "Optional title")
-![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc5.png?raw=true "Optional title")
-![Alt text](https://raw.githubusercontent.com/KMindeguia/moviedbapp/master/Screeshots/sc6.png?raw=true "Optional title")
+[App demo HERE](https://appetize.io/app/va6vwedcp9rn111j1yk5dk9638?device=iphone6&scale=100&orientation=portrait)
 
 Copyright (c) 2015 Kevin Mindeguia
