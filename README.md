@@ -2,8 +2,8 @@
 
 
 # Movies 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/PhamBaTho/BTNavigationDropdownMenu/blob/master/LICENSE)
-[![Platform](https://img.shields.io/cocoapods/p/Hokusai.svg?style=flat)]
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/KMindeguia/movies/blob/master/LICENSE.md)
+[![Platform](https://img.shields.io/cocoapods/p/Hokusai.svg?style=flat)]()
 
 ## Introduction:
 Movies is a collection of a few UI/UX ideas that came up whilst developing an iOS app called Wattmo (http://wattmo.com).
