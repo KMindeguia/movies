@@ -181,7 +181,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return 7;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -237,21 +237,6 @@
         }
         case 3:
         {
-            KMMovieDetailsPopularityCell *popularityCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsPopularityCell"];
-            
-            if(popularityCell == nil)
-                popularityCell = [KMMovieDetailsPopularityCell movieDetailsPopularityCell];
-            
-            popularityCell.voteAverageLabel.text = self.movieDetails.movieVoteAverage;
-            popularityCell.voteCountLabel.text = self.movieDetails.movieVoteCount;
-            popularityCell.popularityLabel.text = self.movieDetails.moviePopularity;
-            
-            cell = popularityCell;
-            
-            break;
-        }
-        case 4:
-        {
             KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
             
             if(commentsCell == nil)
@@ -265,7 +250,7 @@
             
             break;
         }
-        case 5:
+        case 4:
         {
             KMMovieDetailsCommentsCell *commentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCommentsCell"];
             
@@ -280,7 +265,7 @@
             
             break;
         }
-        case 6:
+        case 5:
         {
             KMMovieDetailsViewAllCommentsCell *viewAllCommentsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsViewAllCommentsCell"];
             
@@ -291,7 +276,7 @@
             
             break;
         }
-        case 7:
+        case 6:
         {
             KMComposeCommentCell *composeCommentCell = [tableView dequeueReusableCellWithIdentifier:@"KMComposeCommentCell"];
             
@@ -356,17 +341,12 @@
             
             break;
         }
-        case 3:
-        {
-            height = 67;
-            break;
-        }
-        case 6:
+        case 5:
         {
             height = 46;
             break;
         }
-        case 7:
+        case 6:
         {
             height = 62;
             break;

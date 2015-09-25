@@ -46,7 +46,7 @@
 
 - (void)awakeFromNib
 {
-    self.composeCommentButton.layer.borderColor =  [UIColor colorWithRed:0/255.0 green:161/225.0 blue:0/255.0 alpha:1.0].CGColor;
+    self.composeCommentButton.layer.borderColor =  self.composeCommentButton.titleLabel.textColor.CGColor;
     self.composeCommentButton.layer.borderWidth = 1.0f;
     self.composeCommentButton.layer.cornerRadius = 15.0f;
 }

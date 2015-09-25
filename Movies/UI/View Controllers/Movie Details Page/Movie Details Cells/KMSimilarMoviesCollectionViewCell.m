@@ -8,6 +8,8 @@
 
 #import "KMSimilarMoviesCollectionViewCell.h"
 
+static CGFloat const kImageViewCornerRadius = 2.0;
+
 @implementation KMSimilarMoviesCollectionViewCell
 
 #pragma mark -
@@ -34,12 +36,12 @@
 
 - (void)awakeFromNib
 {
-    self.cellImageView.layer.cornerRadius = self.cellImageView.frame.size.width/2;
+    self.cellImageView.layer.cornerRadius = kImageViewCornerRadius;
     self.cellImageView.layer.masksToBounds = YES;
     
-    self.cellBackgroundView.layer.cornerRadius = self.cellBackgroundView.frame.size.width/2;
+    self.cellBackgroundView.layer.cornerRadius = self.cellImageView.layer.cornerRadius;
     self.cellBackgroundView.layer.masksToBounds = YES;
-    self.cellBackgroundView.layer.borderColor =  [UIColor colorWithRed:0/255.0 green:161/225.0 blue:0/255.0 alpha:1.0].CGColor;
+    self.cellBackgroundView.layer.borderColor =  [UIColor colorWithRed:180/255.0 green:180/225.0 blue:180/255.0 alpha:1.0].CGColor;
     self.cellBackgroundView.layer.borderWidth = 1.0f;
 }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -53,26 +53,26 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BmI-xr-jdb">
-                        <rect key="frame" x="184" y="73" width="111" height="32"/>
-                        <color key="backgroundColor" red="0.0" green="0.63016081199999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="184" y="73" width="126" height="32"/>
+                        <color key="backgroundColor" red="0.23921568627450979" green="0.71764705882352942" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="sxO-Mr-ta9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="16"/>
                         <state key="normal" title="Watch Trailer">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fn1-Ld-nid">
-                        <rect key="frame" x="63" y="73" width="93" height="32"/>
+                        <rect key="frame" x="63" y="73" width="108" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="93" id="KuY-ig-im8"/>
+                            <constraint firstAttribute="width" constant="108" id="KuY-ig-im8"/>
                             <constraint firstAttribute="height" constant="32" id="UCE-al-l9U"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="16"/>
                         <state key="normal" title="Bookmark">
-                            <color key="titleColor" red="0.0" green="0.63016081199999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="0.23921568627450979" green="0.71764705882352942" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
                     <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwC-cG-uqt" userLabel="Separator View">
@@ -87,10 +87,10 @@
                     <constraint firstItem="fn1-Ld-nid" firstAttribute="leading" secondItem="rKy-qo-bFH" secondAttribute="leading" constant="63" id="0db-eL-084"/>
                     <constraint firstAttribute="trailing" secondItem="gwC-cG-uqt" secondAttribute="trailing" id="0kZ-92-BSH"/>
                     <constraint firstItem="eha-D1-82d" firstAttribute="top" secondItem="rKy-qo-bFH" secondAttribute="top" constant="20" id="2ol-RE-TF3"/>
-                    <constraint firstAttribute="trailing" secondItem="BmI-xr-jdb" secondAttribute="trailing" constant="25" id="7nz-om-AMX"/>
+                    <constraint firstAttribute="trailing" secondItem="BmI-xr-jdb" secondAttribute="trailing" constant="10" id="7nz-om-AMX"/>
                     <constraint firstItem="NB6-9d-2f7" firstAttribute="top" secondItem="rKy-qo-bFH" secondAttribute="top" constant="10" id="FhP-PD-9W9"/>
                     <constraint firstItem="eha-D1-82d" firstAttribute="leading" secondItem="cEX-y9-ILi" secondAttribute="trailing" constant="22" id="Liz-PU-WtZ"/>
-                    <constraint firstItem="BmI-xr-jdb" firstAttribute="leading" secondItem="fn1-Ld-nid" secondAttribute="trailing" constant="28" id="M0l-e0-b6q"/>
+                    <constraint firstItem="BmI-xr-jdb" firstAttribute="leading" secondItem="fn1-Ld-nid" secondAttribute="trailing" constant="13" id="M0l-e0-b6q"/>
                     <constraint firstAttribute="trailing" secondItem="eha-D1-82d" secondAttribute="trailing" constant="10" id="Pfe-Yc-14W"/>
                     <constraint firstAttribute="bottom" secondItem="gwC-cG-uqt" secondAttribute="bottom" id="cPc-Z5-kbW"/>
                     <constraint firstItem="DYB-yW-eSW" firstAttribute="leading" secondItem="NB6-9d-2f7" secondAttribute="trailing" constant="15" id="ejP-Xo-6W6"/>
@@ -117,9 +117,4 @@
         <image name="btn_round_next" width="34" height="35"/>
         <image name="movie_icon" width="30" height="30"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
