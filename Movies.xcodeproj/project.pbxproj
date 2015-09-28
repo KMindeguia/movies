@@ -245,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				7B2F31B818A011FE008CD0DA /* App Delegate */,
-				7BA9592518A0280B0004A8A9 /* Libraries */,
 				7B2F31BB18A011FE008CD0DA /* Model */,
 				7B2F31BC18A011FE008CD0DA /* Network */,
 				7B2F31BD18A011FE008CD0DA /* UI */,
@@ -476,13 +475,6 @@
 				7BA9592218A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json */,
 			);
 			path = "Discover List";
-			sourceTree = "<group>";
-		};
-		7BA9592518A0280B0004A8A9 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libraries;
 			sourceTree = "<group>";
 		};
 		7BFB81011B3C0BA1001030AC /* Activity Indicator */ = {
