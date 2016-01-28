@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="54U-h0-aQL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="54U-h0-aQL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -60,11 +60,9 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="320" id="Bqe-aZ-h5Q"/>
                                                         <constraint firstItem="jcO-wH-mfp" firstAttribute="leading" secondItem="0NZ-eU-SxT" secondAttribute="leading" id="CqV-dY-OoT"/>
                                                         <constraint firstItem="jcO-wH-mfp" firstAttribute="top" secondItem="0NZ-eU-SxT" secondAttribute="top" id="DC9-Xw-Qzf"/>
                                                         <constraint firstAttribute="trailing" secondItem="jcO-wH-mfp" secondAttribute="trailing" id="Tgi-Mi-Ly6"/>
-                                                        <constraint firstAttribute="height" constant="206" id="Xck-t7-oAv"/>
                                                         <constraint firstAttribute="bottom" secondItem="jcO-wH-mfp" secondAttribute="bottom" id="jaI-1a-lOQ"/>
                                                     </constraints>
                                                 </view>
