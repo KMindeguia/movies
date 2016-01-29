@@ -14,34 +14,44 @@
 
 @implementation KMBaseSource
 
-#pragma mark -
-#pragma mark Init Methods
+#pragma mark - Init Methods
 
-- (id)init{
+- (id)init
+{
     self = [super init];
-    if (self){
+
+    if (self)
+    {
         self.operationQueue = [[NSOperationQueue alloc] init];
         self.operationQueue.maxConcurrentOperationCount = 1;
     }
     return self;
 }
 
-#pragma mark -
-#pragma mark Response Data Parsing
+#pragma mark - Response Data Parsing
 
-- (NSDictionary*)dictionaryFromResponseData:(NSData*)responseData jsonPatternFile:(NSString*)jsonFile {
+- (NSDictionary *)dictionaryFromResponseData:(NSData *)responseData jsonPatternFile:(NSString *)jsonFile
+{
     NSDictionary* dictionary = nil;
-    if (responseData ) {
+
+    if (responseData)
+    {
         id object = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
-        if ([object isKindOfClass:[NSDictionary class]]){
+
+        if ([object isKindOfClass:[NSDictionary class]])
+        {
             dictionary = (NSDictionary*)object;
         }
         else
         {
             if (object)
+            {
                 dictionary = [NSDictionary dictionaryWithObject:object forKey:@"results"];
+            }
             else
+            {
                 dictionary = nil;
+            }
         }
     }
     return dictionary;
