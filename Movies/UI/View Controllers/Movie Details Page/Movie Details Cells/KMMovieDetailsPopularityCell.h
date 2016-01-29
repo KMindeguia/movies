@@ -10,10 +10,26 @@
 
 @interface KMMovieDetailsPopularityCell : UITableViewCell
 
+/**
+ *  The popularity label
+ */
 @property (weak, nonatomic) IBOutlet UILabel *popularityLabel;
+
+/**
+ *  The  vote count label
+ */
 @property (weak, nonatomic) IBOutlet UILabel *voteCountLabel;
+
+/**
+ *  The average vote score label
+ */
 @property (weak, nonatomic) IBOutlet UILabel *voteAverageLabel;
 
-+ (KMMovieDetailsPopularityCell*) movieDetailsPopularityCell;
+/**
+ *  Call this method to create and configure a `KMMovieDetailsPopularityCell`
+ *
+ *  @return `KMMovieDetailsPopularityCell` instance
+ */
++ (KMMovieDetailsPopularityCell *)movieDetailsPopularityCell;
 
 @end

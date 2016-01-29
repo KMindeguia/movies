@@ -10,8 +10,16 @@
 
 @interface KMComposeCommentCell : UITableViewCell
 
+/**
+ *  The compose comment action button.
+ */
 @property (weak, nonatomic) IBOutlet UIButton *composeCommentButton;
 
-+ (KMComposeCommentCell*) composeCommentsCell;
+/**
+ *  Call this method to create and configure a `KMComposeCommentCell`
+ *
+ *  @return `KMComposeCommentCell` instance
+ */
++ (KMComposeCommentCell *)composeCommentsCell;
 
 @end

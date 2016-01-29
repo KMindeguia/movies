@@ -14,7 +14,7 @@
 
 + (KMMovieDetailsCell *)movieDetailsCell
 {
-    KMMovieDetailsCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsCell" owner:self options:nil] objectAtIndex:0];
+    KMMovieDetailsCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsCell" owner:self options:nil] objectAtIndex:0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

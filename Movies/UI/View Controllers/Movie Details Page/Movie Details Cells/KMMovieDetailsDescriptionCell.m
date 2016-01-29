@@ -10,35 +10,15 @@
 
 @implementation KMMovieDetailsDescriptionCell
 
-#pragma mark -
-#pragma mark Cell Init Methods
+#pragma mark - Cell Init Methods
 
-+ (KMMovieDetailsDescriptionCell*) movieDetailsDescriptionCell
++ (KMMovieDetailsDescriptionCell *)movieDetailsDescriptionCell
 {
-    KMMovieDetailsDescriptionCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsDescriptionCell" owner:self options:nil] objectAtIndex:0];
+    KMMovieDetailsDescriptionCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsDescriptionCell" owner:self options:nil] objectAtIndex:0];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-#pragma mark -
-#pragma mark Cell Methods
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

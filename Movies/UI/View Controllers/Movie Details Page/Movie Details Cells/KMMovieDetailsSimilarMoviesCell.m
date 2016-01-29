@@ -10,36 +10,18 @@
 
 @implementation KMMovieDetailsSimilarMoviesCell
 
-#pragma mark -
-#pragma mark Cell Init Methods
+#pragma mark - Cell Init Methods
 
-+ (KMMovieDetailsSimilarMoviesCell*) movieDetailsSimilarMoviesCell
++ (KMMovieDetailsSimilarMoviesCell *)movieDetailsSimilarMoviesCell
 {
-    KMMovieDetailsSimilarMoviesCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsSimilarMoviesCell" owner:self options:nil] objectAtIndex:0];
+    KMMovieDetailsSimilarMoviesCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsSimilarMoviesCell" owner:self options:nil] objectAtIndex:0];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-#pragma mark -
-#pragma mark CollectionView Datasource Setup
+#pragma mark - CollectionView Datasource Setup
 
 -(void)setCollectionViewDataSourceDelegate:(id<UICollectionViewDataSource, UICollectionViewDelegate>)dataSourceDelegate index:(NSInteger)index
 {
