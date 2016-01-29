@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 typedef void (^KMMovieDetailsCompletionBlock)(KMMovie* _Nullable movieDetails,  NSString* _Nullable  errorString);
 
+/**
+ *  `KMMovieDetailsSource` is a network class which can be used to fetch further details for a movie.
+ */
 @interface KMMovieDetailsSource : KMBaseSource
 
 /**

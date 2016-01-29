@@ -17,7 +17,7 @@
 
 #pragma mark - Init Methods
 
-+ (KMMovieDetailsSource *)movieDetailsSource;
++ (KMMovieDetailsSource *)movieDetailsSource
 {
     static dispatch_once_t onceToken;
     static KMMovieDetailsSource* instance = nil;
@@ -31,7 +31,7 @@
 
 #pragma mark - Request Methods
 
-- (void)getMovieDetails:(NSString *)movieId completion:(KMMovieDetailsCompletionBlock)completionBlock;
+- (void)getMovieDetails:(NSString *)movieId completion:(KMMovieDetailsCompletionBlock)completionBlock
 {
     if (completionBlock)
     {        
@@ -58,10 +58,6 @@
 
                  NSString* errorString = error.localizedDescription;
 
-                 if ([errorString length] == 0)
-                 {
-                     errorString = nil;
-                 }
                  completionBlock(nil, errorString);
              });
          }];
