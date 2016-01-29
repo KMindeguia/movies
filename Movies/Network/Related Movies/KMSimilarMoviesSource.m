@@ -91,7 +91,7 @@
 
 - (NSString *)prepareUrl:(NSString *)movieId
 {
-    return [NSString stringWithFormat:kSimilarMoviesUrlFormat, [KMSourceConfig config].theMovieDbHost, movieId, [KMSourceConfig config].apiKey];
+    return [NSString stringWithFormat:kSimilarMoviesUrlFormat, [KMSourceConfig config].hostUrlString, movieId, [KMSourceConfig config].apiKey];
 }
 
 @end

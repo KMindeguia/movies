@@ -93,7 +93,7 @@
 
 - (NSString *)prepareUrl
 {
-    return [NSString stringWithFormat:kDiscoverUrlFormat, [KMSourceConfig config].theMovieDbHost, [KMSourceConfig config].apiKey];
+    return [NSString stringWithFormat:kDiscoverUrlFormat, [KMSourceConfig config].hostUrlString, [KMSourceConfig config].apiKey];
 }
 
 @end
