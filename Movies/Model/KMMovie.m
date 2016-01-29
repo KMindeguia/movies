@@ -43,17 +43,12 @@
     _movieTitle = @"";
 }
 
-- (id)init{
+- (instancetype)initWithDictionary:(NSDictionary*)dictionary
+{
     self = [super init];
-    if (self){
-        [self initialiseWithSafeValues];
-    }
-    return self;
-}
 
-- (id)initWithDictionary:(NSDictionary*)dictionary {
-    self = [super init];
-    if (self){
+    if (self)
+    {
         [self initialiseWithSafeValues];
         [self processDictionary:dictionary];
     }
@@ -63,7 +58,8 @@
 #pragma mark -
 #pragma mark Dictionary Parsing
 
-- (void)processDictionary:(NSDictionary*)dictionary {
+- (void)processDictionary:(NSDictionary*)dictionary
+{
     if (dictionary)
     {
         _movieId = [NSString stringWithFormat:@"%d", [[dictionary km_safeNumberForKey:kMovieId] intValue]];
@@ -84,21 +80,31 @@
         _movieVoteAverage = [formatter stringFromNumber:[dictionary km_safeNumberForKey:kMovieVoteAverage]];
         
         if ([_moviePopularity length] >= 2)
+        {
             [_moviePopularity substringToIndex:2];
-        
+        }
         if ([_movieVoteAverage length] >= 2)
+        {
             [_movieVoteAverage substringToIndex:2];
+        }
     }
 }
 
 - (NSString*)processGenresIntoString:(NSArray*)genres
 {
     if ([genres count] == 0)
+    {
         return @"";
+    }
+
     NSMutableString* genresString = [[NSMutableString alloc] init];
+
     for (NSDictionary* genre in genres)
+    {
         [genresString appendFormat:@"%@, ", [genre km_safeStringForKey:@"name"]];
+    }
     [genresString replaceCharactersInRange:NSMakeRange([genresString length]-2, 2) withString:@""];
+
     return genresString;
 }
 
