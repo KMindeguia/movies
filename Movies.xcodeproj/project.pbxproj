@@ -57,7 +57,7 @@
 		7BA9592318A0263B0004A8A9 /* KMDiscoverSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9592118A0263B0004A8A9 /* KMDiscoverSource.m */; };
 		7BA9592418A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BA9592218A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json */; };
 		7BFB810A1B3C0BA1001030AC /* KMActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81031B3C0BA1001030AC /* KMActivityIndicator.m */; };
-		7BFB810B1B3C0BA1001030AC /* KMDetailsPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81061B3C0BA1001030AC /* KMDetailsPageView.m */; };
+		7BFB810B1B3C0BA1001030AC /* KMScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81061B3C0BA1001030AC /* KMScrollingHeaderView.m */; };
 		7BFB810C1B3C0BA1001030AC /* KMIndexedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81091B3C0BA1001030AC /* KMIndexedCollectionView.m */; };
 		7BFB81EF1B3C1739001030AC /* KMNetworkLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */; };
 		7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */; };
@@ -160,8 +160,8 @@
 		7BA9592218A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KMDiscoverSourceJsonPattern.json; sourceTree = "<group>"; };
 		7BFB81021B3C0BA1001030AC /* KMActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMActivityIndicator.h; sourceTree = "<group>"; };
 		7BFB81031B3C0BA1001030AC /* KMActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMActivityIndicator.m; sourceTree = "<group>"; };
-		7BFB81051B3C0BA1001030AC /* KMDetailsPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDetailsPageView.h; sourceTree = "<group>"; };
-		7BFB81061B3C0BA1001030AC /* KMDetailsPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMDetailsPageView.m; sourceTree = "<group>"; };
+		7BFB81051B3C0BA1001030AC /* KMScrollingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScrollingHeaderView.h; sourceTree = "<group>"; };
+		7BFB81061B3C0BA1001030AC /* KMScrollingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMScrollingHeaderView.m; sourceTree = "<group>"; };
 		7BFB81081B3C0BA1001030AC /* KMIndexedCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMIndexedCollectionView.h; sourceTree = "<group>"; };
 		7BFB81091B3C0BA1001030AC /* KMIndexedCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMIndexedCollectionView.m; sourceTree = "<group>"; };
 		7BFB81EB1B3C1739001030AC /* KMNetworkLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNetworkLoadingViewController.h; sourceTree = "<group>"; };
@@ -489,8 +489,8 @@
 		7BFB81041B3C0BA1001030AC /* Details Page View */ = {
 			isa = PBXGroup;
 			children = (
-				7BFB81051B3C0BA1001030AC /* KMDetailsPageView.h */,
-				7BFB81061B3C0BA1001030AC /* KMDetailsPageView.m */,
+				7BFB81051B3C0BA1001030AC /* KMScrollingHeaderView.h */,
+				7BFB81061B3C0BA1001030AC /* KMScrollingHeaderView.m */,
 			);
 			path = "Details Page View";
 			sourceTree = "<group>";
@@ -703,7 +703,7 @@
 				7B329E5B18A10B28004D77BF /* KMSimilarMoviesSource.m in Sources */,
 				7B22AD9B18A18BDE00022013 /* KMComposeCommentCell.m in Sources */,
 				7B329E6818A10EA1004D77BF /* KMDiscoverListViewController.m in Sources */,
-				7BFB810B1B3C0BA1001030AC /* KMDetailsPageView.m in Sources */,
+				7BFB810B1B3C0BA1001030AC /* KMScrollingHeaderView.m in Sources */,
 				7BA9592318A0263B0004A8A9 /* KMDiscoverSource.m in Sources */,
 				7B2F31EB18A018A3008CD0DA /* KM_NSArray+SafeValues.m in Sources */,
 				7B2F31D518A0176D008CD0DA /* KMMovie.m in Sources */,

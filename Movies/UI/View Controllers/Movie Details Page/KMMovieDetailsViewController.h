@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KMDetailsPageView.h"
+#import "KMScrollingHeaderView.h"
 #import "KMMovie.h"
 #import "KMGillSansLabel.h"
 #import "KMNetworkLoadingViewController.h"
 
-@interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, KMNetworkLoadingViewDelegate, KMDetailsPageDelegate>
+@interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, KMNetworkLoadingViewDelegate, KMScrollingHeaderViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *navigationBarView;
 @property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
-@property (weak, nonatomic) IBOutlet KMDetailsPageView* detailsPageView;
+@property (weak, nonatomic) IBOutlet KMScrollingHeaderView* scrollingHeaderView;
 @property (weak, nonatomic) IBOutlet KMGillSansLightLabel *navBarTitleLabel;
 
 @property (strong, nonatomic) KMMovie* movieDetails;

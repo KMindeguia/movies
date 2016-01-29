@@ -70,10 +70,13 @@
 
 - (void)setupDetailsPageView
 {
-    self.detailsPageView.tableViewDataSource = self;
-    self.detailsPageView.tableViewDelegate = self;
-    self.detailsPageView.delegate = self;
-    self.detailsPageView.tableViewSeparatorColor = [UIColor clearColor];
+    self.scrollingHeaderView.tableView.dataSource = self;
+    self.scrollingHeaderView.tableView.delegate = self;
+    self.scrollingHeaderView.delegate = self;
+    self.scrollingHeaderView.tableView.separatorColor = [UIColor clearColor];
+    self.scrollingHeaderView.headerImageViewContentMode = UIViewContentModeTop;
+
+    [self.scrollingHeaderView reloadScrollingHeader];
 }
 
 - (void)setupNavbarButtons
@@ -146,7 +149,7 @@
         
         self.similarMoviesDataSource = [NSMutableArray arrayWithArray:data];
         
-        [self.detailsPageView reloadData];
+        [self.scrollingHeaderView reloadScrollingHeader];
         
         [self hideLoadingView];
     }
@@ -394,44 +397,9 @@
 #pragma mark -
 #pragma mark KMDetailsPageDelegate
 
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+- (void)detailsPage:(KMScrollingHeaderView *)detailsPageView headerImageView:(UIImageView *)imageView
 {
-    self.scrollViewDragPoint = scrollView.contentOffset;
-}
-
-- (CGPoint)detailsPage:(KMDetailsPageView *)detailsPageView tableViewWillBeginDragging:(UITableView *)tableView;
-{
-    return self.scrollViewDragPoint;
-}
-
-- (UIViewContentMode)contentModeForImage:(UIImageView *)imageView
-{
-    return UIViewContentModeTop;
-}
-
-- (UIImageView*)detailsPage:(KMDetailsPageView*)detailsPageView imageDataForImageView:(UIImageView*)imageView;
-{
-    __block UIImageView* blockImageView = imageView;
-    
-    [imageView sd_setImageWithURL:[NSURL URLWithString:[self.movieDetails movieOriginalBackdropImageUrl]] completed:^ (UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-        if ([detailsPageView.delegate respondsToSelector:@selector(headerImageViewFinishedLoading:)])
-            [detailsPageView.delegate headerImageViewFinishedLoading:blockImageView];
-        
-    }];
-    
-    return imageView;
-}
-
-- (void)detailsPage:(KMDetailsPageView *)detailsPageView tableViewDidLoad:(UITableView *)tableView
-{
-    tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-}
-
-- (void)detailsPage:(KMDetailsPageView *)detailsPageView headerViewDidLoad:(UIView *)headerView
-{
-    [headerView setAlpha:0.0];
-    [headerView setHidden:YES];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:[self.movieDetails movieOriginalBackdropImageUrl]]];
 }
 
 #pragma mark -
@@ -450,7 +418,7 @@
          
      }];
     
-    self.detailsPageView.navBarView = self.navigationBarView;
+    self.scrollingHeaderView.navbarView = self.navigationBarView;
 }
 
 #pragma mark -
