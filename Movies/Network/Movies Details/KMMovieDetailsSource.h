@@ -13,12 +13,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  KMMovieDetailsCompletionBlock is a completion handler block for the 'KMMovieDetailsSource'
+ *  `KMMovieDetailsCompletionBlock` is a completion handler block for the `KMMovieDetailsSource`
  *
- *  @param movieDetails KMMovie object containing movie data
+ *  @param movieDetails `KMMovie` object containing movie data
  *  @param errorString  An error string
  *
- *  @see KMMovieDetailsSource
+ *  @see `KMMovieDetailsSource`
  */
 typedef void (^KMMovieDetailsCompletionBlock)(KMMovie* _Nullable movieDetails,  NSString* _Nullable  errorString);
 
@@ -28,9 +28,9 @@ typedef void (^KMMovieDetailsCompletionBlock)(KMMovie* _Nullable movieDetails,  
 @interface KMMovieDetailsSource : KMBaseSource
 
 /**
- *  Class method returning a KMMovieDetailsSource shared instance.
+ *  Class method returning a `KMMovieDetailsSource` shared instance.
  *
- *  @return KMMovieDetailsSource instance
+ *  @return `KMMovieDetailsSource` instance
  */
 + (KMMovieDetailsSource *)movieDetailsSource;
 

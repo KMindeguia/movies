@@ -11,12 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  KMSimilarMoviesCompletionBlock is a completion handler block for the 'KMSimilarMoviesSource'
+ *  KMSimilarMoviesCompletionBlock is a completion handler block for the `KMSimilarMoviesSource`
  *
- *  @param dataArray   An array which contains a collection of KMMovie objects
+ *  @param dataArray   An array of `KMMovie` objects
  *  @param errorString An error string
  *
- *  @see 'KMMovie'
+ *  @see `KMMovie`
  */
 typedef void (^KMSimilarMoviesCompletionBlock)(NSArray* _Nullable dataArray, NSString* _Nullable errorString);
 
@@ -26,9 +26,9 @@ typedef void (^KMSimilarMoviesCompletionBlock)(NSArray* _Nullable dataArray, NSS
 @interface KMSimilarMoviesSource : KMBaseSource
 
 /**
- *  Class method returning a KMSimilarMoviesSource shared instance.
+ *  Class method returning a `KMSimilarMoviesSource` shared instance.
  *
- *  @return KMSimilarMoviesSource instance
+ *  @return `KMSimilarMoviesSource` instance
  */
 + (KMSimilarMoviesSource *)similarMoviesSource;
 

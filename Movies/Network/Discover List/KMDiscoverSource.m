@@ -15,23 +15,22 @@
 
 @implementation KMDiscoverSource
 
-#pragma mark -
-#pragma mark Init Methods
+#pragma mark - Init Methods
 
-+ (KMDiscoverSource*)discoverSource;
++ (KMDiscoverSource *)discoverSource;
 {
     static dispatch_once_t onceToken;
     static KMDiscoverSource* instance = nil;
+
     dispatch_once(&onceToken, ^{
-        instance = [[KMDiscoverSource alloc]init];
+        instance = [[KMDiscoverSource alloc] init];
     });
     return instance;
 }
 
-#pragma mark -
-#pragma mark Request Methods
+#pragma mark - Request Methods
 
-- (void)getDiscoverList:(NSString*)pageLimit completion:(KMDiscoverListCompletionBlock)completionBlock;
+- (void)getDiscoverList:(NSString *)pageLimit completion:(KMDiscoverListCompletionBlock)completionBlock;
 {
     if (completionBlock)
     {
@@ -39,13 +38,14 @@
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
         [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
         
         [manager GET:[self prepareUrl] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject)
          {
              NSLog(@"JSON: %@", responseObject);
              NSDictionary* infosDictionary = [self dictionaryFromResponseData:operation.responseData jsonPatternFile:@"KMDiscoverSourceJsonPattern.json"];
+
              dispatch_async(dispatch_get_main_queue(), ^{
                  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                  completionBlock([self processResponseObject:infosDictionary], nil);
@@ -56,37 +56,42 @@
              NSLog(@"Error: %@", error);
              dispatch_async(dispatch_get_main_queue(), ^{
                  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
                  NSString* errorString = error.localizedDescription;
+
                  if ([errorString length] == 0)
+                 {
                      errorString = nil;
+                 }
                  completionBlock(nil, errorString);
              });
          }];
     }
 }
 
-#pragma mark -
-#pragma mark Data Parsing
+#pragma mark - Data Parsing
 
-- (NSArray*)processResponseObject:(NSDictionary*)data
+- (NSArray *)processResponseObject:(NSDictionary*)data
 {
-    if (data == nil)
-        return nil;
-    NSArray* itemsList = [NSArray arrayWithArray:[data objectForKey:@"results"]];
-    NSMutableArray* sortedArray = [[NSMutableArray alloc] init];
-    for (NSDictionary* item in itemsList)
+    if (data)
     {
-        KMMovie* movie = [[KMMovie alloc] initWithDictionary:item];
-        [sortedArray addObject:movie];
+        NSArray* itemsList = [NSArray arrayWithArray:[data objectForKey:@"results"]];
+        NSMutableArray* sortedArray = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary* item in itemsList)
+        {
+            KMMovie* movie = [[KMMovie alloc] initWithDictionary:item];
+            [sortedArray addObject:movie];
+        }
+        return sortedArray;
     }
-    return sortedArray;
+    return nil;
 }
 
 
-#pragma mark -
-#pragma mark Private
+#pragma mark - Private
 
-- (NSString*)prepareUrl
+- (NSString *)prepareUrl
 {
     return [NSString stringWithFormat:kDiscoverUrlFormat, [KMSourceConfig config].theMovieDbHost, [KMSourceConfig config].apiKey];
 }

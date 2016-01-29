@@ -68,12 +68,12 @@
 
 - (KMMovie *)processResponseObject:(NSDictionary*)data
 {
-    if (data == nil)
+    if (data)
     {
-        return nil;
+        return [[KMMovie alloc] initWithDictionary:data];
     }
-
-    return [[KMMovie alloc] initWithDictionary:data];
+    
+    return nil;
 }
 
 #pragma mark - Private
