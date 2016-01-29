@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  `KMMoviePosterCell` is a `UICollectionViewCell` displaying a movie poster image.
+ */
 @interface KMMoviePosterCell : UICollectionViewCell
 
+/**
+ *  The movie poster image view.
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *moviePosterImageView;
 
 @end
