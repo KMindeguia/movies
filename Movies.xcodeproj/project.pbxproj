@@ -77,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		24318ADB7A19B955C7451243 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		67EEA29E1C5BE00F005C4B47 /* KMMovieDetailsCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMMovieDetailsCells.h; sourceTree = "<group>"; };
 		7B0CD94918A23FFC007A66A6 /* KMSimilarMoviesStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KMSimilarMoviesStoryboard.storyboard; sourceTree = "<group>"; };
 		7B0CD94B18A24023007A66A6 /* KMSimilarMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSimilarMoviesViewController.h; sourceTree = "<group>"; };
 		7B0CD94C18A24023007A66A6 /* KMSimilarMoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSimilarMoviesViewController.m; sourceTree = "<group>"; };
@@ -439,6 +440,7 @@
 		7B329E8C18A12380004D77BF /* Movie Details Cells */ = {
 			isa = PBXGroup;
 			children = (
+				67EEA29E1C5BE00F005C4B47 /* KMMovieDetailsCells.h */,
 				7B329E9318A123B5004D77BF /* KMMovieDetailsCell.h */,
 				7B329E9418A123B5004D77BF /* KMMovieDetailsCell.m */,
 				7B329E9518A123B5004D77BF /* KMMovieDetailsCell.xib */,

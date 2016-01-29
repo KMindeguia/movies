@@ -14,13 +14,6 @@
 
 @interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, KMNetworkLoadingViewDelegate, KMScrollingHeaderViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *navigationBarView;
-@property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
-@property (weak, nonatomic) IBOutlet KMScrollingHeaderView* scrollingHeaderView;
-@property (weak, nonatomic) IBOutlet KMGillSansLightLabel *navBarTitleLabel;
-
 @property (strong, nonatomic) KMMovie* movieDetails;
-
-- (IBAction)popViewController:(id)sender;
 
 @end

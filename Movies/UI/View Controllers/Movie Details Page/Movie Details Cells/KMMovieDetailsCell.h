@@ -11,14 +11,36 @@
 
 @interface KMMovieDetailsCell : UITableViewCell
 
+/**
+ *  The movie poster image view
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *posterImageView;
+
+/**
+ *  The movie title label
+ */
 @property (weak, nonatomic) IBOutlet KMGillSansLightLabel *movieTitleLabel;
+
+/**
+ *  The movie genre label
+ */
 @property (weak, nonatomic) IBOutlet UILabel *genresLabel;
 
-
+/**
+ *  The watch trailer button
+ */
 @property (weak, nonatomic) IBOutlet UIButton *watchTrailerButton;
+
+/**
+ *  The bookmark action button
+ */
 @property (weak, nonatomic) IBOutlet UIButton *bookmarkButton;
 
-+ (KMMovieDetailsCell*) movieDetailsCell;
+/**
+ *  Call this method to create and configure a `KMMovieDetailsCell`
+ *
+ *  @return `KMMovieDetailsCell` instance
+ */
++ (KMMovieDetailsCell *)movieDetailsCell;
 
 @end
