@@ -65,10 +65,12 @@
         _movieId = [NSString stringWithFormat:@"%d", [[dictionary km_safeNumberForKey:kMovieId] intValue]];
         _movieTitle = [dictionary km_safeStringForKey:kMovieTitle];
         _movieSynopsis = [dictionary km_safeStringForKey:kMovieSynopsis];
+
         _movieThumbnailPosterImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w92/%@", [dictionary km_safeStringForKey:kMovieOriginalPosterImageUrl]];
         _movieOriginalBackdropImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w780/%@", [dictionary km_safeStringForKey:kMovieBackdropPosterImageUrl]];
         _movieThumbnailBackdropImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w300/%@", [dictionary km_safeStringForKey:kMovieBackdropPosterImageUrl]];
         _movieOriginalPosterImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w500/%@", [dictionary km_safeStringForKey:kMovieOriginalPosterImageUrl]];
+
         _movieGenresString = [self processGenresIntoString:[dictionary km_safeArrayForKey:kMovieGenres]];
         _movieVoteCount = [NSString stringWithFormat:@"%d", [[dictionary km_safeNumberForKey:kMovieVoteCount] intValue]];
         

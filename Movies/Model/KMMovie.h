@@ -84,6 +84,20 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary NS_DESIGNATED_INITIALIZER;
 
+/**
+ *  Unavailable, use the designated initializer.
+ *
+ *  @return nil
+ */
++ (instancetype)new __attribute__((unavailable("Use -initWithFontSpecification: instead")));
+
+/**
+ *  Unavailable, use the designated initializer.
+ *
+ *  @return nil
+ */
+- (instancetype)init __attribute__((unavailable("Use -initWithFontSpecification: instead")));
+
 NS_ASSUME_NONNULL_END
 
 @end
