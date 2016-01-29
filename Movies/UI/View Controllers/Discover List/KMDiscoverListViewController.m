@@ -8,7 +8,7 @@
 
 #import <UIImageView+WebCache.h>
 #import "KMDiscoverListViewController.h"
-#import "StoryBoardUtilities.h"
+#import "KMStoryBoardUtilities.h"
 #import "KMDiscoverListCell.h"
 #import "KMDiscoverSource.h"
 #import "KMMovie.h"
@@ -117,7 +117,7 @@
 
 #pragma mark - KMNetworkLoadingViewDelegate
 
--(void)retryRequest
+-(void)retryRequestButtonWasPressed:(KMNetworkLoadingViewController *)viewController
 {
     [self requestMovies];
 }
@@ -144,7 +144,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
+    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
     
     [self.navigationController pushViewController:viewController animated:YES];
     

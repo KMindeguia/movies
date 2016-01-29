@@ -60,7 +60,7 @@
 		7BFB810B1B3C0BA1001030AC /* KMScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81061B3C0BA1001030AC /* KMScrollingHeaderView.m */; };
 		7BFB810C1B3C0BA1001030AC /* KMIndexedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81091B3C0BA1001030AC /* KMIndexedCollectionView.m */; };
 		7BFB81EF1B3C1739001030AC /* KMNetworkLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */; };
-		7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */; };
+		7BFB81F01B3C1739001030AC /* KMStoryBoardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EE1B3C1739001030AC /* KMStoryBoardUtilities.m */; };
 		7BFB82111B3C1827001030AC /* MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB82101B3C1827001030AC /* MoviesTests.m */; };
 		ABE7289D1FF74AD688F0B347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D671AB54250C4F98B999C342 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -167,8 +167,8 @@
 		7BFB81091B3C0BA1001030AC /* KMIndexedCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMIndexedCollectionView.m; sourceTree = "<group>"; };
 		7BFB81EB1B3C1739001030AC /* KMNetworkLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNetworkLoadingViewController.h; sourceTree = "<group>"; };
 		7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMNetworkLoadingViewController.m; sourceTree = "<group>"; };
-		7BFB81ED1B3C1739001030AC /* StoryBoardUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryBoardUtilities.h; sourceTree = "<group>"; };
-		7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryBoardUtilities.m; sourceTree = "<group>"; };
+		7BFB81ED1B3C1739001030AC /* KMStoryBoardUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMStoryBoardUtilities.h; sourceTree = "<group>"; };
+		7BFB81EE1B3C1739001030AC /* KMStoryBoardUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMStoryBoardUtilities.m; sourceTree = "<group>"; };
 		7BFB820C1B3C1827001030AC /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFB820F1B3C1827001030AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BFB82101B3C1827001030AC /* MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesTests.m; sourceTree = "<group>"; };
@@ -511,8 +511,8 @@
 			children = (
 				7BFB81EB1B3C1739001030AC /* KMNetworkLoadingViewController.h */,
 				7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */,
-				7BFB81ED1B3C1739001030AC /* StoryBoardUtilities.h */,
-				7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */,
+				7BFB81ED1B3C1739001030AC /* KMStoryBoardUtilities.h */,
+				7BFB81EE1B3C1739001030AC /* KMStoryBoardUtilities.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -701,7 +701,7 @@
 				7B22AD9F18A18BDE00022013 /* KMMovieDetailsViewAllCommentsCell.m in Sources */,
 				7B2F31C118A011FE008CD0DA /* KMAppDelegate.m in Sources */,
 				7B2F31EC18A018A3008CD0DA /* KM_NSDictionary+SafeValues.m in Sources */,
-				7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */,
+				7BFB81F01B3C1739001030AC /* KMStoryBoardUtilities.m in Sources */,
 				7B329E5B18A10B28004D77BF /* KMSimilarMoviesSource.m in Sources */,
 				7B22AD9B18A18BDE00022013 /* KMComposeCommentCell.m in Sources */,
 				7B329E6818A10EA1004D77BF /* KMDiscoverListViewController.m in Sources */,

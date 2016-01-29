@@ -9,26 +9,43 @@
 #import <UIKit/UIKit.h>
 #import "KMActivityIndicator.h"
 
+@class KMNetworkLoadingViewController;
+
+/**
+ *  `KMNetworkLoadingViewDelegate` is a delegate protocol for the `KMNetworkLoadingViewController`
+ */
 @protocol KMNetworkLoadingViewDelegate <NSObject>
 
--(void)retryRequest;
+/**
+ *  Notifies the delegate that the `KMNetworkLoadingViewController` retry button has been pressed
+ */
+-(void)retryRequestButtonWasPressed:(KMNetworkLoadingViewController *)viewController;
 
 @end
 
+/**
+ *  `KMNetworkLoadingViewController` is a view controller managing network error statuses
+ */
 @interface KMNetworkLoadingViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *loadingView;
-@property (weak, nonatomic) IBOutlet UIView *errorView;
-@property (weak, nonatomic) IBOutlet UIButton *refreshButton;
-@property (weak, nonatomic) IBOutlet KMActivityIndicator *activityIndicatorView;
-@property (weak, nonatomic) IBOutlet UIView *noContentView;
-
+/**
+ *  The object that acts as the delegate of the view controller.
+ */
 @property (weak, nonatomic) id <KMNetworkLoadingViewDelegate> delegate;
 
-- (IBAction)retryRequest:(id)sender;
-
+/**
+ *  Display the loading view.
+ */
 - (void)showLoadingView;
+
+/**
+ *  Display the no content view
+ */
 - (void)showNoContentView;
+
+/**
+ *  Display the error view.
+ */
 - (void)showErrorView;
 
 

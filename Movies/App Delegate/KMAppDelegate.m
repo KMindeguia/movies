@@ -7,7 +7,7 @@
 //
 
 #import "KMAppDelegate.h"
-#import "StoryBoardUtilities.h"
+#import "KMStoryBoardUtilities.h"
 #import "KMDiscoverListViewController.h"
 
 @implementation KMAppDelegate
@@ -19,7 +19,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UINavigationController* navigationController = (UINavigationController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMDiscoverStoryboard" class:[KMDiscoverListViewController class]];
+    UINavigationController* navigationController = (UINavigationController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMDiscoverStoryboard" class:[KMDiscoverListViewController class]];
     
     [self.window setRootViewController:navigationController];
     

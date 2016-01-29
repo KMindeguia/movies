@@ -10,21 +10,18 @@
 
 @interface KMNetworkLoadingViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UIView *errorView;
+@property (weak, nonatomic) IBOutlet UIButton *refreshButton;
+@property (weak, nonatomic) IBOutlet KMActivityIndicator *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIView *noContentView;
+
 @end
 
 @implementation KMNetworkLoadingViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-#pragma mark -
-#pragma mark View LifeCycle
+#pragma mark - View LifeCycle
 
 - (void)viewDidLoad
 {
@@ -61,13 +58,14 @@
     self.errorView.hidden = YES;
 }
 
-#pragma mark -
-#pragma mark Action Methods
+#pragma mark - Action Methods
 
 - (IBAction)retryRequest:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(retryRequest)])
-        [self.delegate retryRequest];
+    if ([self.delegate respondsToSelector:@selector(retryRequestButtonWasPressed:)])
+    {
+        [self.delegate retryRequestButtonWasPressed:self];
+    }
     
     [self showLoadingView];
 }

@@ -7,7 +7,7 @@
 //
 
 #import "KMMovieDetailsViewController.h"
-#import "StoryBoardUtilities.h"
+#import "KMStoryBoardUtilities.h"
 #import "KMMovieDetailsCells.h"
 #import "KMMovieDetailsSource.h"
 #import "KMSimilarMoviesSource.h"
@@ -160,7 +160,7 @@
 
 - (void)viewAllSimilarMoviesButtonPressed:(id)sender
 {
-    KMSimilarMoviesViewController* viewController = (KMSimilarMoviesViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMSimilarMoviesStoryboard" class:[KMSimilarMoviesViewController class]];
+    KMSimilarMoviesViewController* viewController = (KMSimilarMoviesViewController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMSimilarMoviesStoryboard" class:[KMSimilarMoviesViewController class]];
     
     viewController.moviesDataSource = self.similarMoviesDataSource;
     
@@ -383,7 +383,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
+    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
     
     [self.navigationController pushViewController:viewController animated:YES];
     
@@ -417,7 +417,7 @@
 
 #pragma mark - KMNetworkLoadingViewDelegate
 
-- (void)retryRequest;
+- (void)retryRequestButtonWasPressed:(KMNetworkLoadingViewController *)viewController
 {
     [self requestSimilarMovies];
     [self requestMovieDetails];

@@ -7,7 +7,7 @@
 //
 
 #import "KMSimilarMoviesViewController.h"
-#import "StoryBoardUtilities.h"
+#import "KMStoryBoardUtilities.h"
 #import "KMMovie.h"
 #import "KMMoviePosterCell.h"
 #import "KMMovieDetailsViewController.h"
@@ -96,7 +96,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
+    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
     
     [self.navigationController pushViewController:viewController animated:YES];
     
