@@ -16,6 +16,9 @@
 
 @interface KMDiscoverListViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) NSMutableArray* dataSource;
 @property (nonatomic, strong) UIRefreshControl* refreshControl;
 @property (nonatomic, strong) KMNetworkLoadingViewController* networkLoadingViewController;
@@ -24,20 +27,7 @@
 
 @implementation KMDiscoverListViewController
 
-#pragma mark -
-#pragma mark Init Methods
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-#pragma mark -
-#pragma mark View Lifecycle
+#pragma mark - View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -47,14 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self setupTableView];
-    
     [self requestMovies];
 }
 
-#pragma mark -
-#pragma mark Setup Methods
+#pragma mark - Setup Methods
 
 - (void)setupTableView
 {
@@ -67,10 +55,9 @@
     }
 }
 
-#pragma mark -
-#pragma mark Container Segue Methods
+#pragma mark - Container Segue Methods
 
-- (void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:[NSString stringWithFormat:@"%s", class_getName([KMNetworkLoadingViewController class])]])
     {
@@ -79,8 +66,7 @@
     }
 }
 
-#pragma mark -
-#pragma mark Network Requests methods
+#pragma mark - Network Requests methods
 
 - (void)refreshFeed
 {
@@ -89,58 +75,62 @@
 
 - (void)requestMovies
 {
-    KMDiscoverListCompletionBlock completionBlock = ^(NSArray* data, NSString* errorString)
+    KMDiscoverListCompletionBlock completionBlock = ^(NSArray* dataArray, NSString* errorString)
     {
         [self.refreshControl endRefreshing];
         
-        if (data != nil)
-            [self processData:data];
+        if (dataArray != nil)
+        {
+            [self processData:dataArray];
+        }
         else
+        {
             [self.networkLoadingViewController showErrorView];
+        }
     };
     
     KMDiscoverSource* source = [KMDiscoverSource discoverSource];
     [source getDiscoverList:@"1" completion:completionBlock];
 }
 
-#pragma mark -
-#pragma mark Fetched Data Processing
+#pragma mark - Fetched Data Processing
 
-- (void)processData:(NSArray*)data
+- (void)processData:(NSArray *)data
 {
     if ([data count] == 0)
+    {
         [self.networkLoadingViewController showNoContentView];
+    }
     else
     {
         [self hideLoadingView];
         
         if (!self.dataSource)
+        {
             self.dataSource = [[NSMutableArray alloc] init];
-        
+        }
         self.dataSource = [NSMutableArray arrayWithArray:data];
         
         [self.tableView reloadData];
     }
 }
 
-#pragma mark -
-#pragma mark KMNetworkLoadingViewDelegate
+#pragma mark - KMNetworkLoadingViewDelegate
 
--(void)retryRequest;
+-(void)retryRequest
 {
     [self requestMovies];
 }
 
-#pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.dataSource count];
     
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     KMDiscoverListCell* cell = (KMDiscoverListCell*)[tableView dequeueReusableCellWithIdentifier:@"DiscoverListCell" forIndexPath:indexPath];
     
@@ -150,10 +140,9 @@
     return cell;
 }
 
-#pragma mark -
-#pragma mark UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
     
@@ -162,8 +151,7 @@
     viewController.movieDetails = [self.dataSource objectAtIndex:indexPath.row];
 }
 
-#pragma mark -
-#pragma mark KMNetworkLoadingViewController Methods
+#pragma mark - KMNetworkLoadingViewController Methods
 
 - (void)hideLoadingView
 {

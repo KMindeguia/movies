@@ -14,6 +14,9 @@
 
 @interface KMMovieDetailsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, KMNetworkLoadingViewDelegate, KMScrollingHeaderViewDelegate>
 
+/**
+ *  The movie details object.
+ */
 @property (strong, nonatomic) KMMovie* movieDetails;
 
 @end

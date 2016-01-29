@@ -17,6 +17,8 @@
 
 @interface KMSimilarMoviesViewController ()
 
+@property (weak, nonatomic) IBOutlet UICollectionView* collectionView;
+
 @end
 
 @implementation KMSimilarMoviesViewController

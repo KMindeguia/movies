@@ -11,7 +11,4 @@
 
 @interface KMDiscoverListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, KMNetworkLoadingViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @end

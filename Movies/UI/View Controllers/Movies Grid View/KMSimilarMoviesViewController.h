@@ -10,8 +10,9 @@
 
 @interface KMSimilarMoviesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView* collectionView;
-
+/**
+ *  The collection of `KMMovie` objects to be displayed as similar movies.
+ */
 @property (strong, nonatomic) NSArray* moviesDataSource;
 
 @end
