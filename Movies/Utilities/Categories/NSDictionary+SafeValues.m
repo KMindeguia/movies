@@ -7,69 +7,71 @@
 //
 
 
-#import "KM_NSDictionary+SafeValues.h"
+#import "NSDictionary+SafeValues.h"
 
-@implementation NSDictionary (KM_NSDictionary_SafeValues)
+@implementation NSDictionary (NSDictionary_SafeValues)
 
-- (NSString*)km_safeStringForKey:(id)key {
+- (NSString *)safeStringForKey:(id)key
+{
     NSString* string = nil;
     id obj = [self objectForKey:key];
-    if ([obj isKindOfClass:[NSString class]]){
+    
+    if ([obj isKindOfClass:[NSString class]])
+    {
         string = obj;
     }
-    else {
+    else
+    {
         string = @"";
     }
     return [string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (NSNumber*)km_safeNumberForKey:(id)key {
+- (NSNumber *)safeNumberForKey:(id)key
+{
     NSNumber* number = nil;
     id obj = [self objectForKey:key];
-    if ([obj isKindOfClass:[NSNumber class]]){
+    
+    if ([obj isKindOfClass:[NSNumber class]])
+    {
         number = obj;
     }
-    else {
+    else
+    {
         number = [NSNumber numberWithInt:0];
     }
     return number;
 }
 
-- (NSArray*)km_safeArrayForKey:(id)key {
+- (NSArray *)safeArrayForKey:(id)key
+{
     NSArray* array = nil;
     id obj = [self objectForKey:key];
-    if ([obj isKindOfClass:[NSArray class]]){
+    
+    if ([obj isKindOfClass:[NSArray class]])
+    {
         array = obj;
     }
-    else {
+    else
+    {
         array = [NSArray array];
     }
     return array;
 }
 
-- (NSDictionary*)km_safeDictionaryForKey:(id)key {
+- (NSDictionary *)safeDictionaryForKey:(id)key
+{
     NSDictionary* dictionary = nil;
     id obj = [self objectForKey:key];
-    if ([obj isKindOfClass:[NSDictionary class]]) {
+    if ([obj isKindOfClass:[NSDictionary class]])
+    {
         dictionary = obj;
     }
-    else {
+    else
+    {
         dictionary = [NSDictionary dictionary];
     }
     return dictionary;
-}
-
-- (UIImage*)km_safeImageForKey:(id)key;
-{
-    UIImage* image = nil;
-    id obj = [self objectForKey:key];
-    if ([obj isKindOfClass:[UIImage class]]) {
-        image = obj;
-    }
-    else {
-        image = nil;
-    }
-    return image;
 }
 
 @end

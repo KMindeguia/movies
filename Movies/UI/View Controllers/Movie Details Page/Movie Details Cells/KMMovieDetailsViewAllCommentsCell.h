@@ -10,6 +10,11 @@
 
 @interface KMMovieDetailsViewAllCommentsCell : UITableViewCell
 
-+ (KMMovieDetailsViewAllCommentsCell*) movieDetailsAllCommentsCell;
+/**
+ *  Call this method to create and configure a `KMMovieDetailsViewAllCommentsCell`
+ *
+ *  @return `KMMovieDetailsViewAllCommentsCell` instance
+ */
++ (KMMovieDetailsViewAllCommentsCell *)movieDetailsAllCommentsCell;
 
 @end

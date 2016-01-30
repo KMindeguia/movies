@@ -10,10 +10,26 @@
 
 @interface KMMovieDetailsCommentsCell : UITableViewCell
 
+/**
+ *  The user name label
+ */
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+
+/**
+ *  The comment label
+ */
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
+/**
+ *  The user avatar image view
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 
-+ (KMMovieDetailsCommentsCell*) movieDetailsCommentsCell;
+/**
+ *  Call this method to create and configure a `KMMovieDetailsCommentsCell`
+ *
+ *  @return `KMMovieDetailsCommentsCell` instance
+ */
++ (KMMovieDetailsCommentsCell *)movieDetailsCommentsCell;
 
 @end

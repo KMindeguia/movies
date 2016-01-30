@@ -10,12 +10,11 @@
 
 @implementation KMMovieDetailsCell
 
-#pragma mark -
-#pragma mark Init Methods
+#pragma mark - Init Methods
 
-+ (KMMovieDetailsCell*) movieDetailsCell
++ (KMMovieDetailsCell *)movieDetailsCell
 {
-    KMMovieDetailsCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsCell" owner:self options:nil] objectAtIndex:0];
+    KMMovieDetailsCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsCell" owner:self options:nil] objectAtIndex:0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -30,8 +29,7 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark View Lifecycle
+#pragma mark - View Lifecycle
 
 - (void)awakeFromNib
 {
@@ -44,16 +42,6 @@
     self.bookmarkButton.layer.borderColor =  self.bookmarkButton.titleLabel.textColor.CGColor;
     self.bookmarkButton.layer.borderWidth = 1.0f;
     self.bookmarkButton.layer.cornerRadius = 15.0f;
-}
-
-#pragma mark -
-#pragma mark Cell Methods
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end

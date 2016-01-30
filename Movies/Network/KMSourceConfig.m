@@ -7,7 +7,7 @@
 //
 
 #import "KMSourceConfig.h"
-#import "KM_NSDictionary+SafeValues.h"
+#import "NSDictionary+SafeValues.h"
 
 #define kConfigVersionKey @"version"
 #define kConfigBuildKey @"build"
@@ -16,28 +16,34 @@
 
 @implementation KMSourceConfig
 
-#pragma mark -
-#pragma mark Init Methods
+#pragma mark - Init Methods
 
-+ (KMSourceConfig*)config{
++ (KMSourceConfig *)config
+{
     static dispatch_once_t onceToken;
     static KMSourceConfig* instance = nil;
+
     dispatch_once(&onceToken, ^{
         instance = [[KMSourceConfig alloc] init];
     });
     return instance;
 }
 
-- (id) init{
+- (instancetype)init
+{
     self = [super init];
-    if (self){
+
+    if (self)
+    {
         NSBundle* bundle = [NSBundle bundleForClass:[self class]];
         NSDictionary* config = [[NSDictionary alloc]initWithContentsOfFile:[bundle pathForResource:@"KMSourceConfig" ofType:@"plist"]];
-        _theMovieDbHost = [config km_safeStringForKey:kConfigTheMovieDbHostKey];
-        _version = [config km_safeStringForKey:kConfigVersionKey];
-        _build = [config km_safeStringForKey:kConfigBuildKey];
-        _apiKey = [config km_safeStringForKey:kConfigApiKey];
+
+        _hostUrlString = [config safeStringForKey:kConfigTheMovieDbHostKey];
+        _version = [config safeStringForKey:kConfigVersionKey];
+        _build = [config safeStringForKey:kConfigBuildKey];
+        _apiKey = [config safeStringForKey:kConfigApiKey];
     }
+    
     return self;
 }
 

@@ -30,10 +30,10 @@
 		7B2F31D818A01794008CD0DA /* KMBaseSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31D718A01794008CD0DA /* KMBaseSource.m */; };
 		7B2F31DB18A017C1008CD0DA /* KMSourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31DA18A017C1008CD0DA /* KMSourceConfig.m */; };
 		7B2F31E018A01833008CD0DA /* KMSourceConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B2F31DF18A01833008CD0DA /* KMSourceConfig.plist */; };
-		7B2F31EB18A018A3008CD0DA /* KM_NSArray+SafeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E218A018A3008CD0DA /* KM_NSArray+SafeValues.m */; };
-		7B2F31EC18A018A3008CD0DA /* KM_NSDictionary+SafeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E418A018A3008CD0DA /* KM_NSDictionary+SafeValues.m */; };
-		7B2F31ED18A018A3008CD0DA /* KM_NSString+UrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E618A018A3008CD0DA /* KM_NSString+UrlEncoding.m */; };
-		7B2F31EE18A018A3008CD0DA /* KM_NSURL+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E818A018A3008CD0DA /* KM_NSURL+Parameters.m */; };
+		7B2F31EB18A018A3008CD0DA /* NSArray+SafeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E218A018A3008CD0DA /* NSArray+SafeValues.m */; };
+		7B2F31EC18A018A3008CD0DA /* NSDictionary+SafeValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E418A018A3008CD0DA /* NSDictionary+SafeValues.m */; };
+		7B2F31ED18A018A3008CD0DA /* NSString+UrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E618A018A3008CD0DA /* NSString+UrlEncoding.m */; };
+		7B2F31EE18A018A3008CD0DA /* NSURL+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31E818A018A3008CD0DA /* NSURL+Parameters.m */; };
 		7B2F31EF18A018A3008CD0DA /* NSBundle+Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F31EA18A018A3008CD0DA /* NSBundle+Loader.m */; };
 		7B329E5B18A10B28004D77BF /* KMSimilarMoviesSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E5A18A10B28004D77BF /* KMSimilarMoviesSource.m */; };
 		7B329E6718A10EA1004D77BF /* KMDiscoverListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B329E6418A10EA1004D77BF /* KMDiscoverListCell.m */; };
@@ -57,10 +57,10 @@
 		7BA9592318A0263B0004A8A9 /* KMDiscoverSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9592118A0263B0004A8A9 /* KMDiscoverSource.m */; };
 		7BA9592418A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BA9592218A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json */; };
 		7BFB810A1B3C0BA1001030AC /* KMActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81031B3C0BA1001030AC /* KMActivityIndicator.m */; };
-		7BFB810B1B3C0BA1001030AC /* KMDetailsPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81061B3C0BA1001030AC /* KMDetailsPageView.m */; };
+		7BFB810B1B3C0BA1001030AC /* KMScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81061B3C0BA1001030AC /* KMScrollingHeaderView.m */; };
 		7BFB810C1B3C0BA1001030AC /* KMIndexedCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81091B3C0BA1001030AC /* KMIndexedCollectionView.m */; };
 		7BFB81EF1B3C1739001030AC /* KMNetworkLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */; };
-		7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */; };
+		7BFB81F01B3C1739001030AC /* KMStoryBoardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB81EE1B3C1739001030AC /* KMStoryBoardUtilities.m */; };
 		7BFB82111B3C1827001030AC /* MoviesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB82101B3C1827001030AC /* MoviesTests.m */; };
 		ABE7289D1FF74AD688F0B347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D671AB54250C4F98B999C342 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -77,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		24318ADB7A19B955C7451243 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		67EEA29E1C5BE00F005C4B47 /* KMMovieDetailsCells.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMMovieDetailsCells.h; sourceTree = "<group>"; };
 		7B0CD94918A23FFC007A66A6 /* KMSimilarMoviesStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KMSimilarMoviesStoryboard.storyboard; sourceTree = "<group>"; };
 		7B0CD94B18A24023007A66A6 /* KMSimilarMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSimilarMoviesViewController.h; sourceTree = "<group>"; };
 		7B0CD94C18A24023007A66A6 /* KMSimilarMoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSimilarMoviesViewController.m; sourceTree = "<group>"; };
@@ -115,14 +116,14 @@
 		7B2F31D918A017C1008CD0DA /* KMSourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSourceConfig.h; sourceTree = "<group>"; };
 		7B2F31DA18A017C1008CD0DA /* KMSourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMSourceConfig.m; sourceTree = "<group>"; };
 		7B2F31DF18A01833008CD0DA /* KMSourceConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KMSourceConfig.plist; sourceTree = "<group>"; };
-		7B2F31E118A018A3008CD0DA /* KM_NSArray+SafeValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KM_NSArray+SafeValues.h"; sourceTree = "<group>"; };
-		7B2F31E218A018A3008CD0DA /* KM_NSArray+SafeValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KM_NSArray+SafeValues.m"; sourceTree = "<group>"; };
-		7B2F31E318A018A3008CD0DA /* KM_NSDictionary+SafeValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KM_NSDictionary+SafeValues.h"; sourceTree = "<group>"; };
-		7B2F31E418A018A3008CD0DA /* KM_NSDictionary+SafeValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KM_NSDictionary+SafeValues.m"; sourceTree = "<group>"; };
-		7B2F31E518A018A3008CD0DA /* KM_NSString+UrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KM_NSString+UrlEncoding.h"; sourceTree = "<group>"; };
-		7B2F31E618A018A3008CD0DA /* KM_NSString+UrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KM_NSString+UrlEncoding.m"; sourceTree = "<group>"; };
-		7B2F31E718A018A3008CD0DA /* KM_NSURL+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KM_NSURL+Parameters.h"; sourceTree = "<group>"; };
-		7B2F31E818A018A3008CD0DA /* KM_NSURL+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KM_NSURL+Parameters.m"; sourceTree = "<group>"; };
+		7B2F31E118A018A3008CD0DA /* NSArray+SafeValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SafeValues.h"; sourceTree = "<group>"; };
+		7B2F31E218A018A3008CD0DA /* NSArray+SafeValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SafeValues.m"; sourceTree = "<group>"; };
+		7B2F31E318A018A3008CD0DA /* NSDictionary+SafeValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeValues.h"; sourceTree = "<group>"; };
+		7B2F31E418A018A3008CD0DA /* NSDictionary+SafeValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeValues.m"; sourceTree = "<group>"; };
+		7B2F31E518A018A3008CD0DA /* NSString+UrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UrlEncoding.h"; sourceTree = "<group>"; };
+		7B2F31E618A018A3008CD0DA /* NSString+UrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UrlEncoding.m"; sourceTree = "<group>"; };
+		7B2F31E718A018A3008CD0DA /* NSURL+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Parameters.h"; sourceTree = "<group>"; };
+		7B2F31E818A018A3008CD0DA /* NSURL+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Parameters.m"; sourceTree = "<group>"; };
 		7B2F31E918A018A3008CD0DA /* NSBundle+Loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Loader.h"; sourceTree = "<group>"; };
 		7B2F31EA18A018A3008CD0DA /* NSBundle+Loader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Loader.m"; sourceTree = "<group>"; };
 		7B329E5918A10B28004D77BF /* KMSimilarMoviesSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMSimilarMoviesSource.h; sourceTree = "<group>"; };
@@ -160,14 +161,14 @@
 		7BA9592218A0263B0004A8A9 /* KMDiscoverSourceJsonPattern.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KMDiscoverSourceJsonPattern.json; sourceTree = "<group>"; };
 		7BFB81021B3C0BA1001030AC /* KMActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMActivityIndicator.h; sourceTree = "<group>"; };
 		7BFB81031B3C0BA1001030AC /* KMActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMActivityIndicator.m; sourceTree = "<group>"; };
-		7BFB81051B3C0BA1001030AC /* KMDetailsPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMDetailsPageView.h; sourceTree = "<group>"; };
-		7BFB81061B3C0BA1001030AC /* KMDetailsPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMDetailsPageView.m; sourceTree = "<group>"; };
+		7BFB81051B3C0BA1001030AC /* KMScrollingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScrollingHeaderView.h; sourceTree = "<group>"; };
+		7BFB81061B3C0BA1001030AC /* KMScrollingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMScrollingHeaderView.m; sourceTree = "<group>"; };
 		7BFB81081B3C0BA1001030AC /* KMIndexedCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMIndexedCollectionView.h; sourceTree = "<group>"; };
 		7BFB81091B3C0BA1001030AC /* KMIndexedCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMIndexedCollectionView.m; sourceTree = "<group>"; };
 		7BFB81EB1B3C1739001030AC /* KMNetworkLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMNetworkLoadingViewController.h; sourceTree = "<group>"; };
 		7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMNetworkLoadingViewController.m; sourceTree = "<group>"; };
-		7BFB81ED1B3C1739001030AC /* StoryBoardUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryBoardUtilities.h; sourceTree = "<group>"; };
-		7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryBoardUtilities.m; sourceTree = "<group>"; };
+		7BFB81ED1B3C1739001030AC /* KMStoryBoardUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMStoryBoardUtilities.h; sourceTree = "<group>"; };
+		7BFB81EE1B3C1739001030AC /* KMStoryBoardUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMStoryBoardUtilities.m; sourceTree = "<group>"; };
 		7BFB820C1B3C1827001030AC /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BFB820F1B3C1827001030AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BFB82101B3C1827001030AC /* MoviesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesTests.m; sourceTree = "<group>"; };
@@ -346,14 +347,14 @@
 			children = (
 				7B329E7D18A11278004D77BF /* NSString+MD5.h */,
 				7B329E7E18A11278004D77BF /* NSString+MD5.m */,
-				7B2F31E118A018A3008CD0DA /* KM_NSArray+SafeValues.h */,
-				7B2F31E218A018A3008CD0DA /* KM_NSArray+SafeValues.m */,
-				7B2F31E318A018A3008CD0DA /* KM_NSDictionary+SafeValues.h */,
-				7B2F31E418A018A3008CD0DA /* KM_NSDictionary+SafeValues.m */,
-				7B2F31E518A018A3008CD0DA /* KM_NSString+UrlEncoding.h */,
-				7B2F31E618A018A3008CD0DA /* KM_NSString+UrlEncoding.m */,
-				7B2F31E718A018A3008CD0DA /* KM_NSURL+Parameters.h */,
-				7B2F31E818A018A3008CD0DA /* KM_NSURL+Parameters.m */,
+				7B2F31E118A018A3008CD0DA /* NSArray+SafeValues.h */,
+				7B2F31E218A018A3008CD0DA /* NSArray+SafeValues.m */,
+				7B2F31E318A018A3008CD0DA /* NSDictionary+SafeValues.h */,
+				7B2F31E418A018A3008CD0DA /* NSDictionary+SafeValues.m */,
+				7B2F31E518A018A3008CD0DA /* NSString+UrlEncoding.h */,
+				7B2F31E618A018A3008CD0DA /* NSString+UrlEncoding.m */,
+				7B2F31E718A018A3008CD0DA /* NSURL+Parameters.h */,
+				7B2F31E818A018A3008CD0DA /* NSURL+Parameters.m */,
 				7B2F31E918A018A3008CD0DA /* NSBundle+Loader.h */,
 				7B2F31EA18A018A3008CD0DA /* NSBundle+Loader.m */,
 				7B2F31C818A01717008CD0DA /* UIFont+GillSansFonts.h */,
@@ -439,6 +440,7 @@
 		7B329E8C18A12380004D77BF /* Movie Details Cells */ = {
 			isa = PBXGroup;
 			children = (
+				67EEA29E1C5BE00F005C4B47 /* KMMovieDetailsCells.h */,
 				7B329E9318A123B5004D77BF /* KMMovieDetailsCell.h */,
 				7B329E9418A123B5004D77BF /* KMMovieDetailsCell.m */,
 				7B329E9518A123B5004D77BF /* KMMovieDetailsCell.xib */,
@@ -489,8 +491,8 @@
 		7BFB81041B3C0BA1001030AC /* Details Page View */ = {
 			isa = PBXGroup;
 			children = (
-				7BFB81051B3C0BA1001030AC /* KMDetailsPageView.h */,
-				7BFB81061B3C0BA1001030AC /* KMDetailsPageView.m */,
+				7BFB81051B3C0BA1001030AC /* KMScrollingHeaderView.h */,
+				7BFB81061B3C0BA1001030AC /* KMScrollingHeaderView.m */,
 			);
 			path = "Details Page View";
 			sourceTree = "<group>";
@@ -509,8 +511,8 @@
 			children = (
 				7BFB81EB1B3C1739001030AC /* KMNetworkLoadingViewController.h */,
 				7BFB81EC1B3C1739001030AC /* KMNetworkLoadingViewController.m */,
-				7BFB81ED1B3C1739001030AC /* StoryBoardUtilities.h */,
-				7BFB81EE1B3C1739001030AC /* StoryBoardUtilities.m */,
+				7BFB81ED1B3C1739001030AC /* KMStoryBoardUtilities.h */,
+				7BFB81EE1B3C1739001030AC /* KMStoryBoardUtilities.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -688,9 +690,9 @@
 				7B2F31DB18A017C1008CD0DA /* KMSourceConfig.m in Sources */,
 				7BFB81EF1B3C1739001030AC /* KMNetworkLoadingViewController.m in Sources */,
 				7B0CD95018A2413E007A66A6 /* KMMoviePosterCell.m in Sources */,
-				7B2F31EE18A018A3008CD0DA /* KM_NSURL+Parameters.m in Sources */,
+				7B2F31EE18A018A3008CD0DA /* NSURL+Parameters.m in Sources */,
 				7B2F31D018A01717008CD0DA /* UIFont+GillSansFonts.m in Sources */,
-				7B2F31ED18A018A3008CD0DA /* KM_NSString+UrlEncoding.m in Sources */,
+				7B2F31ED18A018A3008CD0DA /* NSString+UrlEncoding.m in Sources */,
 				7B329E7C18A10F37004D77BF /* KMMovieDetailsViewController.m in Sources */,
 				7B2F31EF18A018A3008CD0DA /* NSBundle+Loader.m in Sources */,
 				7B329E8618A11E72004D77BF /* KMMovieDetailsSource.m in Sources */,
@@ -698,14 +700,14 @@
 				7BFB810C1B3C0BA1001030AC /* KMIndexedCollectionView.m in Sources */,
 				7B22AD9F18A18BDE00022013 /* KMMovieDetailsViewAllCommentsCell.m in Sources */,
 				7B2F31C118A011FE008CD0DA /* KMAppDelegate.m in Sources */,
-				7B2F31EC18A018A3008CD0DA /* KM_NSDictionary+SafeValues.m in Sources */,
-				7BFB81F01B3C1739001030AC /* StoryBoardUtilities.m in Sources */,
+				7B2F31EC18A018A3008CD0DA /* NSDictionary+SafeValues.m in Sources */,
+				7BFB81F01B3C1739001030AC /* KMStoryBoardUtilities.m in Sources */,
 				7B329E5B18A10B28004D77BF /* KMSimilarMoviesSource.m in Sources */,
 				7B22AD9B18A18BDE00022013 /* KMComposeCommentCell.m in Sources */,
 				7B329E6818A10EA1004D77BF /* KMDiscoverListViewController.m in Sources */,
-				7BFB810B1B3C0BA1001030AC /* KMDetailsPageView.m in Sources */,
+				7BFB810B1B3C0BA1001030AC /* KMScrollingHeaderView.m in Sources */,
 				7BA9592318A0263B0004A8A9 /* KMDiscoverSource.m in Sources */,
-				7B2F31EB18A018A3008CD0DA /* KM_NSArray+SafeValues.m in Sources */,
+				7B2F31EB18A018A3008CD0DA /* NSArray+SafeValues.m in Sources */,
 				7B2F31D518A0176D008CD0DA /* KMMovie.m in Sources */,
 				7B2F31D818A01794008CD0DA /* KMBaseSource.m in Sources */,
 				7B66F5AC18A1729B0070DEB4 /* KMMovieDetailsPopularityCell.m in Sources */,

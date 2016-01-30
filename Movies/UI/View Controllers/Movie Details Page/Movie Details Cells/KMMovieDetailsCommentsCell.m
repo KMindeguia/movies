@@ -10,39 +10,18 @@
 
 @implementation KMMovieDetailsCommentsCell
 
-#pragma mark -
-#pragma mark Cell Init Methods
+#pragma mark - Cell Init Methods
 
-+ (KMMovieDetailsCommentsCell*) movieDetailsCommentsCell
++ (KMMovieDetailsCommentsCell *)movieDetailsCommentsCell
 {
-    KMMovieDetailsCommentsCell * cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsCommentsCell" owner:self options:nil] objectAtIndex:0];
+    KMMovieDetailsCommentsCell* cell = [[[NSBundle mainBundle] loadNibNamed:@"KMMovieDetailsCommentsCell" owner:self options:nil] objectAtIndex:0];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-#pragma mark -
-#pragma mark Cell Methods
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-#pragma mark -
-#pragma mark View Lifecycle
+#pragma mark - View Lifecycle
 
 - (void)awakeFromNib
 {

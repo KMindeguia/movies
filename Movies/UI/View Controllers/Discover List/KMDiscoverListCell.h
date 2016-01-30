@@ -11,7 +11,14 @@
 
 @interface KMDiscoverListCell : UITableViewCell
 
+/**
+ *  The movie's backdrop image view
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *timelineImageView;
+
+/**
+ *  The movie's title label.
+ */
 @property (weak, nonatomic) IBOutlet KMGillSansLightLabel *titleLabel;
 
 @end

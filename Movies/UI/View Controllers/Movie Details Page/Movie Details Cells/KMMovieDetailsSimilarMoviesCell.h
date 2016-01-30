@@ -12,10 +12,33 @@
 
 @interface KMMovieDetailsSimilarMoviesCell : UITableViewCell
 
+/**
+ *  The similar movies cell collection view
+ */
 @property (weak, nonatomic) IBOutlet KMIndexedCollectionView *collectionView;
+
+/**
+ *  The similar movies action button
+ *
+ *  @discussion Action button which takes user to `KMSimilarMoviesViewController`
+ *
+ *  @see `KMSimilarMoviesViewController`
+ */
 @property (weak, nonatomic) IBOutlet UIButton *viewAllSimilarMoviesButton;
 
-+ (KMMovieDetailsSimilarMoviesCell*) movieDetailsSimilarMoviesCell;
+/**
+ *  Call this method to create and configure a `KMMovieDetailsSimilarMoviesCell`
+ *
+ *  @return `KMMovieDetailsSimilarMoviesCell` instance
+ */
++ (KMMovieDetailsSimilarMoviesCell *)movieDetailsSimilarMoviesCell;
+
+/**
+ *  Use this method to set the collectionView's dataSource and delegate
+ *
+ *  @param dataSourceDelegate The delegate object to which the collectionView should hold a reference to.
+ *  @param index              The indexPath.row of this UITableViewCell in it's tableView.
+ */
 - (void)setCollectionViewDataSourceDelegate:(id<UICollectionViewDataSource, UICollectionViewDelegate>)dataSourceDelegate index:(NSInteger)index;
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 iKode Ltd. All rights reserved.
 //
 
-#import "StoryBoardUtilities.h"
+#import "KMStoryBoardUtilities.h"
 
-@implementation StoryBoardUtilities
+@implementation KMStoryBoardUtilities
 
 + (UIViewController*)viewControllerForStoryboardName:(NSString*)storyboardName class:(id)class
 {

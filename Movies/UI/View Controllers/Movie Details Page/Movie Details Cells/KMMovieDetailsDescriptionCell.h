@@ -11,8 +11,16 @@
 
 @interface KMMovieDetailsDescriptionCell : UITableViewCell
 
-+ (KMMovieDetailsDescriptionCell*) movieDetailsDescriptionCell;
-
+/**
+ *  The movie description label.
+ */
 @property (weak, nonatomic) IBOutlet UILabel *movieDescriptionLabel;
+
+/**
+ *  Call this method to create and configure a `KMMovieDetailsDescriptionCell`
+ *
+ *  @return `KMMovieDetailsDescriptionCell` instance
+ */
++ (KMMovieDetailsDescriptionCell *)movieDetailsDescriptionCell;
 
 @end

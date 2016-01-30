@@ -6,19 +6,24 @@
 //  Copyright (c) 2013 iKode Ltd. All rights reserved.
 //
 
-#import "KM_NSURL+Parameters.h"
+#import "NSURL+Parameters.h"
 
 
-@implementation NSURL (KM_NSURL_Parameters)
+@implementation NSURL (NSURL_Parameters)
 
-+ (NSURL*)URLWithString:(NSString*)urlString additionalParameters:(NSString*)additionalParameters{
++ (NSURL *)URLWithString:(NSString *)urlString additionalParameters:(NSString *)additionalParameters
+{
     
     NSURL* url = [NSURL URLWithString:urlString];
 
     BOOL alreadyHasParameters = url.query.length;
-    if (alreadyHasParameters){
+    
+    if (alreadyHasParameters)
+    {
         urlString = [urlString stringByAppendingString:@"&"];
-    } else {
+    }
+    else
+    {
         urlString = [urlString stringByAppendingString:@"?"];
     }
 

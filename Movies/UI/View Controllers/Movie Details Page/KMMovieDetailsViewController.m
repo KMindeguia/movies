@@ -7,15 +7,8 @@
 //
 
 #import "KMMovieDetailsViewController.h"
-#import "StoryBoardUtilities.h"
-#import "KMMovieDetailsCell.h"
-#import "KMMovieDetailsDescriptionCell.h"
-#import "KMMovieDetailsSimilarMoviesCell.h"
-#import "KMSimilarMoviesCollectionViewCell.h"
-#import "KMMovieDetailsPopularityCell.h"
-#import "KMMovieDetailsCommentsCell.h"
-#import "KMMovieDetailsViewAllCommentsCell.h"
-#import "KMComposeCommentCell.h"
+#import "KMStoryBoardUtilities.h"
+#import "KMMovieDetailsCells.h"
 #import "KMMovieDetailsSource.h"
 #import "KMSimilarMoviesSource.h"
 #import "KMSimilarMoviesViewController.h"
@@ -23,8 +16,13 @@
 
 @interface KMMovieDetailsViewController ()
 
-@property (nonatomic, strong) NSMutableArray* similarMoviesDataSource;
-@property (nonatomic, strong) KMNetworkLoadingViewController* networkLoadingViewController;
+@property (weak, nonatomic) IBOutlet UIView *navigationBarView;
+@property (weak, nonatomic) IBOutlet UIView *networkLoadingContainerView;
+@property (weak, nonatomic) IBOutlet KMScrollingHeaderView* scrollingHeaderView;
+@property (weak, nonatomic) IBOutlet KMGillSansLightLabel *navBarTitleLabel;
+
+@property (strong, nonatomic) NSMutableArray* similarMoviesDataSource;
+@property (strong, nonatomic) KMNetworkLoadingViewController* networkLoadingViewController;
 @property (assign) CGPoint scrollViewDragPoint;
 
 @end
@@ -32,23 +30,12 @@
 @implementation KMMovieDetailsViewController
 
 #pragma mark -
-#pragma mark Init Methods
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-#pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+
     self.navigationController.interactivePopGestureRecognizer.delegate = nil;
     
     [super viewWillAppear:animated];
@@ -59,21 +46,21 @@
     [super viewDidLoad];
     
     [self setupNavbarButtons];
-    
     [self requestMovieDetails];
-    
     [self setupDetailsPageView];
 }
 
-#pragma mark -
-#pragma mark Setup
+#pragma mark - Setup Methods
 
 - (void)setupDetailsPageView
 {
-    self.detailsPageView.tableViewDataSource = self;
-    self.detailsPageView.tableViewDelegate = self;
-    self.detailsPageView.delegate = self;
-    self.detailsPageView.tableViewSeparatorColor = [UIColor clearColor];
+    self.scrollingHeaderView.tableView.dataSource = self;
+    self.scrollingHeaderView.tableView.delegate = self;
+    self.scrollingHeaderView.delegate = self;
+    self.scrollingHeaderView.tableView.separatorColor = [UIColor clearColor];
+    self.scrollingHeaderView.headerImageViewContentMode = UIViewContentModeTop;
+
+    [self.scrollingHeaderView reloadScrollingHeader];
 }
 
 - (void)setupNavbarButtons
@@ -89,10 +76,9 @@
     self.navBarTitleLabel.text = self.movieDetails.movieTitle;
 }
 
-#pragma mark -
-#pragma mark Container Segue Methods
+#pragma mark - Container Segue Methods
 
-- (void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:[NSString stringWithFormat:@"%s", class_getName([KMNetworkLoadingViewController class])]])
     {
@@ -106,12 +92,16 @@
 
 - (void)requestSimilarMovies
 {
-    KMSimilarMoviesCompletionBlock completionBlock = ^(NSArray* data, NSString* errorString)
+    KMSimilarMoviesCompletionBlock completionBlock = ^(NSArray* dataArray, NSString* errorString)
     {
-        if (data != nil)
-            [self processSimilarMoviesData:data];
+        if (dataArray != nil)
+        {
+            [self processSimilarMoviesData:dataArray];
+        }
         else
+        {
             [self.networkLoadingViewController showErrorView];
+        }
     };
     
     KMSimilarMoviesSource* source = [KMSimilarMoviesSource similarMoviesSource];
@@ -123,48 +113,54 @@
     KMMovieDetailsCompletionBlock completionBlock = ^(KMMovie* movieDetails, NSString* errorString)
     {
         if (movieDetails != nil)
+        {
             [self processMovieDetailsData:movieDetails];
+        }
         else
+        {
             [self.networkLoadingViewController showErrorView];
+        }
     };
     
     KMMovieDetailsSource* source = [KMMovieDetailsSource movieDetailsSource];
     [source getMovieDetails:self.movieDetails.movieId completion:completionBlock];
 }
 
-#pragma mark -
-#pragma mark Fetched Data Processing
+#pragma mark - Fetched Data Processing
 
-- (void)processSimilarMoviesData:(NSArray*)data
+- (void)processSimilarMoviesData:(NSArray *)data
 {
     if ([data count] == 0)
+    {
         [self.networkLoadingViewController showNoContentView];
+    }
     else
     {
         if (!self.similarMoviesDataSource)
+        {
             self.similarMoviesDataSource = [[NSMutableArray alloc] init];
+        }
         
         self.similarMoviesDataSource = [NSMutableArray arrayWithArray:data];
         
-        [self.detailsPageView reloadData];
+        [self.scrollingHeaderView reloadScrollingHeader];
         
         [self hideLoadingView];
     }
 }
 
-- (void)processMovieDetailsData:(KMMovie*)data
+- (void)processMovieDetailsData:(KMMovie *)data
 {
     self.movieDetails = data;
     
     [self requestSimilarMovies];
 }
 
-#pragma mark -
-#pragma mark Action Methods
+#pragma mark - Action Methods
 
 - (void)viewAllSimilarMoviesButtonPressed:(id)sender
 {
-    KMSimilarMoviesViewController* viewController = (KMSimilarMoviesViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMSimilarMoviesStoryboard" class:[KMSimilarMoviesViewController class]];
+    KMSimilarMoviesViewController* viewController = (KMSimilarMoviesViewController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMSimilarMoviesStoryboard" class:[KMSimilarMoviesViewController class]];
     
     viewController.moviesDataSource = self.similarMoviesDataSource;
     
@@ -176,8 +172,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark -
-#pragma mark UITableView Data Source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -194,7 +189,8 @@
     // A much nicer way to deal with this would be to extract this code to a factory class, that would take care of building the cells.
     UITableViewCell* cell = nil;
     
-    switch (indexPath.row) {
+    switch (indexPath.row)
+    {
         case 0:
         {
             KMMovieDetailsCell *detailsCell = [tableView dequeueReusableCellWithIdentifier:@"KMMovieDetailsCell"];
@@ -293,8 +289,7 @@
     return cell;
 }
 
-#pragma mark -
-#pragma mark UITableView Delegate
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -313,7 +308,9 @@
     }
     
     if ([cell isKindOfClass:[KMMovieDetailsCommentsCell class]])
+    {
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, cell.bounds.size.width);
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -321,7 +318,8 @@
     // A much nicer way to deal with this would be to extract this code to a factory class, that would return the cells' height.
     CGFloat height = 0;
     
-    switch (indexPath.row) {
+    switch (indexPath.row)
+    {
         case 0:
         {
             height = 120;
@@ -335,10 +333,13 @@
         case 2:
         {
             if ([self.similarMoviesDataSource count] == 0)
+            {
                 height = 0;
+            }
             else
+            {
                 height = 143;
-            
+            }
             break;
         }
         case 5:
@@ -362,8 +363,7 @@
     return height;
 }
 
-#pragma mark -
-#pragma mark UICollectionView DataSource
+#pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
@@ -379,63 +379,25 @@
     return cell;
 }
 
-#pragma mark -
-#pragma mark UICollectionView Delegate
+#pragma mark - UICollectionView Delegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[StoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
+    KMMovieDetailsViewController* viewController = (KMMovieDetailsViewController*)[KMStoryBoardUtilities viewControllerForStoryboardName:@"KMMovieDetailsStoryboard" class:[KMMovieDetailsViewController class]];
     
     [self.navigationController pushViewController:viewController animated:YES];
     
     viewController.movieDetails = [self.similarMoviesDataSource objectAtIndex:indexPath.row];
 }
 
-#pragma mark -
-#pragma mark KMDetailsPageDelegate
+#pragma mark - KMScrollingHeaderViewDelegate
 
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+- (void)detailsPage:(KMScrollingHeaderView *)detailsPageView headerImageView:(UIImageView *)imageView
 {
-    self.scrollViewDragPoint = scrollView.contentOffset;
+    [imageView sd_setImageWithURL:[NSURL URLWithString:[self.movieDetails movieOriginalBackdropImageUrl]]];
 }
 
-- (CGPoint)detailsPage:(KMDetailsPageView *)detailsPageView tableViewWillBeginDragging:(UITableView *)tableView;
-{
-    return self.scrollViewDragPoint;
-}
-
-- (UIViewContentMode)contentModeForImage:(UIImageView *)imageView
-{
-    return UIViewContentModeTop;
-}
-
-- (UIImageView*)detailsPage:(KMDetailsPageView*)detailsPageView imageDataForImageView:(UIImageView*)imageView;
-{
-    __block UIImageView* blockImageView = imageView;
-    
-    [imageView sd_setImageWithURL:[NSURL URLWithString:[self.movieDetails movieOriginalBackdropImageUrl]] completed:^ (UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-        if ([detailsPageView.delegate respondsToSelector:@selector(headerImageViewFinishedLoading:)])
-            [detailsPageView.delegate headerImageViewFinishedLoading:blockImageView];
-        
-    }];
-    
-    return imageView;
-}
-
-- (void)detailsPage:(KMDetailsPageView *)detailsPageView tableViewDidLoad:(UITableView *)tableView
-{
-    tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-}
-
-- (void)detailsPage:(KMDetailsPageView *)detailsPageView headerViewDidLoad:(UIView *)headerView
-{
-    [headerView setAlpha:0.0];
-    [headerView setHidden:YES];
-}
-
-#pragma mark -
-#pragma mark KMNetworkLoadingViewController Methods
+#pragma mark - KMNetworkLoadingViewController
 
 - (void)hideLoadingView
 {
@@ -450,16 +412,14 @@
          
      }];
     
-    self.detailsPageView.navBarView = self.navigationBarView;
+    self.scrollingHeaderView.navbarView = self.navigationBarView;
 }
 
-#pragma mark -
-#pragma mark KMNetworkLoadingViewDelegate
+#pragma mark - KMNetworkLoadingViewDelegate
 
--(void)retryRequest;
+- (void)retryRequestButtonWasPressed:(KMNetworkLoadingViewController *)viewController
 {
     [self requestSimilarMovies];
-    
     [self requestMovieDetails];
 }
 

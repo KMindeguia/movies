@@ -8,9 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSBundle (Loader)
 
-- (id)dataFromResource:(NSString *)resource;
-- (id)jsonFromResource:(NSString *)resource;
+/**
+ *  Use this method to fetch data from a bundled resource file
+ *
+ *  @param resource Resource file path
+ *
+ *  @return Fetched data
+ */
+- (NSData * _Nullable)dataFromResource:(NSString *)resource;
+
+/**
+ *  Use this method to fetch json data from a bundled resource file
+ *
+ *  @param resource @param resource Resource file path
+ *
+ *  @return Fetched JSON data
+ */
+- (id _Nullable)jsonFromResource:(NSString *)resource;
 
 @end
+
+NS_ASSUME_NONNULL_END

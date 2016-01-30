@@ -10,10 +10,18 @@
 
 #define ANIMATION_DURATION_SECS 0.5
 
+typedef enum {
+    KMActivityIndicatorStepZero = 0,
+    KMActivityIndicatorStepOne,
+    KMActivityIndicatorStepTwo,
+    KMActivityIndicatorStepThree,
+    KMActivityIndicatorStepFour,
+} KMActivityIndicatorStep;
+
 @interface KMActivityIndicator ()
 
-@property (nonatomic, assign) float dotRadius;
-@property (nonatomic, assign) int stepNumber;
+@property (nonatomic, assign) CGFloat dotRadius;
+@property (nonatomic, assign) KMActivityIndicatorStep stepNumber;
 @property (nonatomic, assign) BOOL isAnimating;
 @property (nonatomic, assign) CGRect firstPoint, secondPoint, thirdPoint, fourthPoint;
 @property (nonatomic, strong) CALayer *firstDot, *secondDot, *thirdDot;
@@ -32,19 +40,21 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+
     if (self)
     {
         [self setupViewLayout:frame];
     }
+
     return self;
 }
 
 - (void)setupViewLayout:(CGRect)frame
 {
-    _stepNumber = 0;
+    _stepNumber = KMActivityIndicatorStepZero;
     _isAnimating = NO;
-    self.hidesWhenStopped = YES;
-    self.color = [UIColor colorWithRed:241/255.0f green:196/255.0f blue:15/255.0f alpha:1.0];
+    _hidesWhenStopped = YES;
+    _color = [UIColor colorWithRed:241/255.0f green:196/255.0f blue:15/255.0f alpha:1.0];
     
     _dotRadius = frame.size.height <= frame.size.width ? frame.size.width/12 : frame.size.height/12;
     _firstPoint = CGRectMake(frame.size.width/4-_dotRadius, frame.size.height/2-_dotRadius, 2*_dotRadius, 2*_dotRadius);
@@ -83,7 +93,7 @@
     self.layer.hidden = YES;
 }
 
--(void)startAnimating
+- (void)startAnimating
 {
     if (!_isAnimating)
     {
@@ -95,26 +105,28 @@
     }
 }
 
--(void)stopAnimating
+- (void)stopAnimating
 {
     _isAnimating = NO;
     
     if (self.hidesWhenStopped)
+    {
         self.layer.hidden = YES;
-    
+    }
+
     [_timer invalidate];
     
-    _stepNumber = 0;
+    _stepNumber = KMActivityIndicatorStepZero;
     _firstDot.frame = _fourthPoint;
     _secondDot.frame = _firstPoint;
     _thirdDot.frame = _thirdPoint;
 }
 
--(void)animateNextStep
+- (void)animateNextStep
 {
     switch (_stepNumber)
     {
-        case 0:
+        case KMActivityIndicatorStepZero:
         {
             [CATransaction begin];
             [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
@@ -123,7 +135,7 @@
             [CATransaction commit];
             break;
         }
-        case 1:
+        case KMActivityIndicatorStepOne:
         {
             [CATransaction begin];
             [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
@@ -132,7 +144,7 @@
             [CATransaction commit];
             break;
         }
-        case 2:
+        case KMActivityIndicatorStepTwo:
         {
             [CATransaction begin];
             [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
@@ -141,7 +153,7 @@
             [CATransaction commit];
             break;
         }
-        case 3:
+        case KMActivityIndicatorStepThree:
         {
             [CATransaction begin];
             [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
@@ -150,14 +162,14 @@
             [CATransaction commit];
             break;
         }
-        case 4:
+        case KMActivityIndicatorStepFour:
         {
             [CATransaction begin];
             [CATransaction setAnimationDuration:ANIMATION_DURATION_SECS];
             _firstDot.frame = _secondPoint;
             _thirdDot.frame = _fourthPoint;
             [CATransaction commit];
-            _stepNumber = 0;
+            _stepNumber = KMActivityIndicatorStepZero;
         }
         default:
             break;

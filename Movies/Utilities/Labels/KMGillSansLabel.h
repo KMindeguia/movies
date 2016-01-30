@@ -1,6 +1,6 @@
 //
 //  KMGillSansLabel.h
-//  BigCentral
+//
 //
 //  Created by Kevin Mindeguia on 24/06/2013.
 //  Copyright (c) 2013 iKode Ltd. All rights reserved.

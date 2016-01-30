@@ -10,9 +10,21 @@
 
 @interface KMSimilarMoviesCollectionViewCell : UICollectionViewCell
 
-+ (KMSimilarMoviesCollectionViewCell*) similarMoviesCollectionViewCell;
-
+/**
+ *  The movie's poster image view
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
+
+/**
+ *  The cell's background view
+ */
 @property (weak, nonatomic) IBOutlet UIView *cellBackgroundView;
+
+/**
+ *  Call this method to create and configure a `KMSimilarMoviesCollectionViewCell`
+ *
+ *  @return `KMSimilarMoviesCollectionViewCell` instance
+ */
++ (KMSimilarMoviesCollectionViewCell *)similarMoviesCollectionViewCell;
 
 @end

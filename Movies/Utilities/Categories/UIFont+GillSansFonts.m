@@ -10,22 +10,22 @@
 
 @implementation UIFont (RotoboFonts)
 
-+ (UIFont*)gillSansBoldFontWithSize:(CGFloat)fontSize
++ (UIFont *)gillSansBoldFontWithSize:(CGFloat)fontSize
 {
     return [UIFont fontWithName:@"GillSans-Bold" size:fontSize];
 }
 
-+ (UIFont*)gillSansMediumFontWithSize:(CGFloat)fontSize
++ (UIFont *)gillSansMediumFontWithSize:(CGFloat)fontSize
 {
     return  [UIFont fontWithName:@"GillSans-Medium" size:fontSize];
 }
 
-+ (UIFont*)gillSansRegularFontWithSize:(CGFloat)fontSize
++ (UIFont *)gillSansRegularFontWithSize:(CGFloat)fontSize
 {
     return  [UIFont fontWithName:@"GillSans-Regular" size:fontSize];
 }
 
-+ (UIFont*)gillSansLightFontWithSize:(CGFloat)fontSize;
++ (UIFont *)gillSansLightFontWithSize:(CGFloat)fontSize
 {
     return  [UIFont fontWithName:@"GillSans-Light" size:fontSize];
 }
