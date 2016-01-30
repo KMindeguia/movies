@@ -10,12 +10,26 @@
 #import <Foundation/Foundation.h>
 #import <CommonCrypto/CommonDigest.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSString (MD5)
 
-// MD5 hash of the file on the filesystem specified by path
-+ (NSString *) stringWithMD5OfFile: (NSString *) path;
-// The string's MD5 hash
-- (NSString *) MD5Hash;
+/**
+ *  MD5 hash of the file on the filesystem specified by path
+ *
+ *  @param path File path string
+ *
+ *  @return The MD5 hash string
+ */
++ (NSString *)stringWithMD5OfFile:(NSString *)path;
+
+/**
+ *  The string's MD5 hash
+ *
+ *  @return The MD5 hash string
+ */
+- (NSString *)MD5Hash;
 
 @end
 
+NS_ASSUME_NONNULL_END

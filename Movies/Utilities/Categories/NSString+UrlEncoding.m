@@ -7,13 +7,15 @@
 //
 
 
-#import "KM_NSString+UrlEncoding.h"
+#import "NSString+UrlEncoding.h"
 
-@implementation NSString (KM_NSString_UrlEncoding)
+@implementation NSString (NSString_UrlEncoding)
 
--(NSString*)urlEncodedString{
+- (NSString *)urlEncodedString
+{
     NSString* unEncodedString = [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString* encodedString = [unEncodedString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     return encodedString;
 }
 

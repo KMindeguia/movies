@@ -8,7 +8,7 @@
 
 #import "KMBaseSource.h"
 #import "KMSourceConfig.h"
-#import "KM_NSString+UrlEncoding.h"
+#import "NSString+UrlEncoding.h"
 
 #import "NSBundle+Loader.h"
 

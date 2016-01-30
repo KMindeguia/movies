@@ -10,9 +10,40 @@
 
 @interface UIFont (GillSansFonts)
 
-+ (UIFont*)gillSansBoldFontWithSize:(CGFloat)fontSize;
-+ (UIFont*)gillSansMediumFontWithSize:(CGFloat)fontSize;
-+ (UIFont*)gillSansRegularFontWithSize:(CGFloat)fontSize;
-+ (UIFont*)gillSansLightFontWithSize:(CGFloat)fontSize;
+/**
+ *  Use this method to load GillSansBold font
+ *
+ *  @param fontSize The desired font size
+ *
+ *  @return The loaded font
+ */
++ (UIFont *)gillSansBoldFontWithSize:(CGFloat)fontSize;
+
+/**
+ *  Use this method to load GillSansMedium font
+ *
+ *  @param fontSize The desired font size
+ *
+ *  @return The loaded font
+ */
++ (UIFont *)gillSansMediumFontWithSize:(CGFloat)fontSize;
+
+/**
+ *  Use this method to load GillSansRegular font
+ *
+ *  @param fontSize The desired font size
+ *
+ *  @return The loaded font
+ */
++ (UIFont *)gillSansRegularFontWithSize:(CGFloat)fontSize;
+
+/**
+ *  Use this method to load GillSansLight font
+ *
+ *  @param fontSize The desired font size
+ *
+ *  @return The loaded font
+ */
++ (UIFont *)gillSansLightFontWithSize:(CGFloat)fontSize;
 
 @end

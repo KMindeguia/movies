@@ -7,7 +7,7 @@
 //
 
 #import "KMSourceConfig.h"
-#import "KM_NSDictionary+SafeValues.h"
+#import "NSDictionary+SafeValues.h"
 
 #define kConfigVersionKey @"version"
 #define kConfigBuildKey @"build"
@@ -38,10 +38,10 @@
         NSBundle* bundle = [NSBundle bundleForClass:[self class]];
         NSDictionary* config = [[NSDictionary alloc]initWithContentsOfFile:[bundle pathForResource:@"KMSourceConfig" ofType:@"plist"]];
 
-        _hostUrlString = [config km_safeStringForKey:kConfigTheMovieDbHostKey];
-        _version = [config km_safeStringForKey:kConfigVersionKey];
-        _build = [config km_safeStringForKey:kConfigBuildKey];
-        _apiKey = [config km_safeStringForKey:kConfigApiKey];
+        _hostUrlString = [config safeStringForKey:kConfigTheMovieDbHostKey];
+        _version = [config safeStringForKey:kConfigVersionKey];
+        _build = [config safeStringForKey:kConfigBuildKey];
+        _apiKey = [config safeStringForKey:kConfigApiKey];
     }
     
     return self;

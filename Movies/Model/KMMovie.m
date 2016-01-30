@@ -7,7 +7,7 @@
 //
 
 #import "KMMovie.h"
-#import "KM_NSDictionary+SafeValues.h"
+#import "NSDictionary+SafeValues.h"
 
 #define kMovieTitle @"original_title"
 #define kMovieId @"id"
@@ -62,24 +62,24 @@
 {
     if (dictionary)
     {
-        _movieId = [NSString stringWithFormat:@"%d", [[dictionary km_safeNumberForKey:kMovieId] intValue]];
-        _movieTitle = [dictionary km_safeStringForKey:kMovieTitle];
-        _movieSynopsis = [dictionary km_safeStringForKey:kMovieSynopsis];
+        _movieId = [NSString stringWithFormat:@"%d", [[dictionary safeNumberForKey:kMovieId] intValue]];
+        _movieTitle = [dictionary safeStringForKey:kMovieTitle];
+        _movieSynopsis = [dictionary safeStringForKey:kMovieSynopsis];
 
-        _movieThumbnailPosterImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w92/%@", [dictionary km_safeStringForKey:kMovieOriginalPosterImageUrl]];
-        _movieOriginalBackdropImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w780/%@", [dictionary km_safeStringForKey:kMovieBackdropPosterImageUrl]];
-        _movieThumbnailBackdropImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w300/%@", [dictionary km_safeStringForKey:kMovieBackdropPosterImageUrl]];
-        _movieOriginalPosterImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w500/%@", [dictionary km_safeStringForKey:kMovieOriginalPosterImageUrl]];
+        _movieThumbnailPosterImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w92/%@", [dictionary safeStringForKey:kMovieOriginalPosterImageUrl]];
+        _movieOriginalBackdropImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w780/%@", [dictionary safeStringForKey:kMovieBackdropPosterImageUrl]];
+        _movieThumbnailBackdropImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w300/%@", [dictionary safeStringForKey:kMovieBackdropPosterImageUrl]];
+        _movieOriginalPosterImageUrl = [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w500/%@", [dictionary safeStringForKey:kMovieOriginalPosterImageUrl]];
 
-        _movieGenresString = [self processGenresIntoString:[dictionary km_safeArrayForKey:kMovieGenres]];
-        _movieVoteCount = [NSString stringWithFormat:@"%d", [[dictionary km_safeNumberForKey:kMovieVoteCount] intValue]];
+        _movieGenresString = [self processGenresIntoString:[dictionary safeArrayForKey:kMovieGenres]];
+        _movieVoteCount = [NSString stringWithFormat:@"%d", [[dictionary safeNumberForKey:kMovieVoteCount] intValue]];
         
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
         [formatter setPositiveFormat:@"#0.0"];
         
-        _moviePopularity = [formatter stringFromNumber:[dictionary km_safeNumberForKey:kMoviePopularity]];
-        _movieVoteAverage = [formatter stringFromNumber:[dictionary km_safeNumberForKey:kMovieVoteAverage]];
+        _moviePopularity = [formatter stringFromNumber:[dictionary safeNumberForKey:kMoviePopularity]];
+        _movieVoteAverage = [formatter stringFromNumber:[dictionary safeNumberForKey:kMovieVoteAverage]];
         
         if ([_moviePopularity length] >= 2)
         {
@@ -103,7 +103,7 @@
 
     for (NSDictionary* genre in genres)
     {
-        [genresString appendFormat:@"%@, ", [genre km_safeStringForKey:@"name"]];
+        [genresString appendFormat:@"%@, ", [genre safeStringForKey:@"name"]];
     }
     [genresString replaceCharactersInRange:NSMakeRange([genresString length]-2, 2) withString:@""];
 
