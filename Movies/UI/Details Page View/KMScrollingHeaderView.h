@@ -41,10 +41,6 @@
 @interface KMScrollingHeaderView : UIView
 
 /**
- Image header height value will set the height of the image pager header. Default value is 375.0f.
- */
-
-/**
 *  The height of the header imageView. Default: 375.0f.
 */
 @property (nonatomic) CGFloat headerImageViewHeight;
