@@ -5,14 +5,15 @@ devices([
    "iPhone 6",
    "iPhone 6 Plus",
    "iPhone 5",
+   "iPhone 7",
+   "iPhone 7 Plus",
 #   "iPad Pro (12.9 inch)",
 # "iPad Pro (9.7-inch)",
 #   "Apple TV 1080p"
 ])
 
 languages([
-  "en-US",
-  "fr-FR",
+  "en-US"
 # "it-IT",
 #  ["pt", "pt_BR"] # Portuguese with Brazilian locale
 ])
