@@ -3,10 +3,10 @@
 # A list of devices you want to take the screenshots from
 devices([
    "iPhone 6",
-#   "iPhone 6 Plus",
+   "iPhone 6 Plus",
    "iPhone 5",
 #   "iPad Pro (12.9 inch)",
-   "iPad Pro (9.7-inch)",
+# "iPad Pro (9.7-inch)",
 #   "Apple TV 1080p"
 ])
 
