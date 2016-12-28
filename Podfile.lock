@@ -18,16 +18,36 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - OHHTTPStubs (5.2.3):
+    - OHHTTPStubs/Default (= 5.2.3)
+  - OHHTTPStubs/Core (5.2.3)
+  - OHHTTPStubs/Default (5.2.3):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.2.3):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/Mocktail (5.2.3):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.2.3):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.2.3)
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - OHHTTPStubs
+  - OHHTTPStubs/Mocktail
   - SDWebImage (~> 3.6)
 
 SPEC CHECKSUMS:
   AFNetworking: caca0799b310f0c3bf1fc1af45145fc96972bcab
+  OHHTTPStubs: e238cd5b66d8efa51c861db45895de8fe079f4a7
   SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
 
-COCOAPODS: 0.37.1
+PODFILE CHECKSUM: 76eece7faf9764f02b73b624ead2829a98063bb0
+
+COCOAPODS: 1.1.1
