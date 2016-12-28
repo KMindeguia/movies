@@ -1,0 +1,107 @@
+GET
+/3/movie/330459\?api_key=.*$
+200
+application/json
+Content-Type: application/json;charset=utf-8
+X-Memc: HIT
+X-Memc-Key: f84e0360330f8db39cf4534328a98eb3
+Access-Control-Allow-Origin: *
+X-RateLimit-Reset: 1482919255
+Content-Encoding: gzip
+Server: openresty
+Vary: Accept-Encoding
+Cache-Control: public, max-age=28800
+Date: Wed, 28 Dec 2016 10:00:45 GMT
+Content-Length: 774
+X-RateLimit-Limit: 40
+X-RateLimit-Remaining: 39
+X-Memc-Expires: 9492
+Connection: keep-alive
+Etag: W/"9c6314fbcec31ac1ea79885738725688"
+X-Memc-Age: 19308
+Status: 200 OK
+
+{
+  "runtime" : 134,
+  "status" : "Released",
+  "backdrop_path" : "\/tZjVVIYXACV4IIIhXeIM59ytqwS.jpg",
+  "overview" : "A rogue band of resistance fighters unite for a mission to steal the Death Star plans and bring a new hope to the galaxy.",
+  "title" : "Rogue One: A Star Wars Story",
+  "vote_count" : 937,
+  "tagline" : "A Rebellion Built on Hope",
+  "belongs_to_collection" : {
+    "backdrop_path" : "\/d8duYyyC9J5T825Hg7grmaabfxQ.jpg",
+    "id" : 10,
+    "name" : "Star Wars Collection",
+    "poster_path" : "\/ghd5zOQnDaDW1mxO7R5fXXpZMu.jpg"
+  },
+  "original_title" : "Rogue One: A Star Wars Story",
+  "original_language" : "en",
+  "poster_path" : "\/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg",
+  "production_countries" : [
+    {
+      "name" : "United States of America",
+      "iso_3166_1" : "US"
+    }
+  ],
+  "revenue" : 442673674,
+  "homepage" : "http:\/\/www.starwars.com\/films\/rogue-one",
+  "video" : false,
+  "imdb_id" : "tt3748528",
+  "id" : 330459,
+  "release_date" : "2016-12-14",
+  "budget" : 200000000,
+  "popularity" : 180.361561,
+  "genres" : [
+    {
+      "id" : 28,
+      "name" : "Action"
+    },
+    {
+      "id" : 12,
+      "name" : "Adventure"
+    },
+    {
+      "id" : 14,
+      "name" : "Fantasy"
+    },
+    {
+      "id" : 878,
+      "name" : "Science Fiction"
+    },
+    {
+      "id" : 53,
+      "name" : "Thriller"
+    },
+    {
+      "id" : 10752,
+      "name" : "War"
+    }
+  ],
+  "production_companies" : [
+    {
+      "name" : "Lucasfilm",
+      "id" : 1
+    },
+    {
+      "name" : "Walt Disney Studios Motion Pictures",
+      "id" : 3036
+    },
+    {
+      "name" : "Allison Shearmur Productions",
+      "id" : 47706
+    },
+    {
+      "name" : "Black Hangar Studios",
+      "id" : 68738
+    }
+  ],
+  "adult" : false,
+  "spoken_languages" : [
+    {
+      "name" : "English",
+      "iso_639_1" : "en"
+    }
+  ],
+  "vote_average" : 7.4
+}

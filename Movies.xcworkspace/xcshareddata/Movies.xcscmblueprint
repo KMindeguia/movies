@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0EE0ADE7D8D01D8E816DD678416753DB756E28BA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "12AFBF2029495BDF8ACBF374775C4A9681200AD8" : 9223372036854775807,
+    "0EE0ADE7D8D01D8E816DD678416753DB756E28BA" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EBED2430-F9C0-4FBD-80CF-BA5DE7CE7E2D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "12AFBF2029495BDF8ACBF374775C4A9681200AD8" : "",
+    "0EE0ADE7D8D01D8E816DD678416753DB756E28BA" : "movies\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Movies",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Movies.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KMindeguia\/moviedbapp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0EE0ADE7D8D01D8E816DD678416753DB756E28BA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:bcojan\/blowy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "12AFBF2029495BDF8ACBF374775C4A9681200AD8"
+    }
+  ]
+}

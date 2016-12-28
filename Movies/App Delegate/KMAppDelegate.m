@@ -9,6 +9,9 @@
 #import "KMAppDelegate.h"
 #import "KMStoryBoardUtilities.h"
 #import "KMDiscoverListViewController.h"
+#import "SWHTTpTrafficRecorder.h"
+#import <OHHTTPStubs/OHHTTPStubs.h>
+#import "OHHTTPStubs/OHHTTPStubs+Mocktail.h"
 
 @implementation KMAppDelegate
 
@@ -25,7 +28,31 @@
     
     [self setupNavigationTitleLabelStyle];
     [self setupStatusBarStyle];
+    
+    
+    //TODO add argument for recording
+    
+//    [SWHttpTrafficRecorder sharedRecorder].recordingFormat = SWHTTPTrafficRecordingFormatMocktail ;
+//    NSError *error ;
+//    [[SWHttpTrafficRecorder sharedRecorder] startRecordingAtPath:@"/Users/bastien/Desktop/moktails" error:&error];
+//
+    
+    
+    NSString *stubArg = @"Appsnap_stubbing";
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"SELF matches[c] %@", stubArg];
+    BOOL stubbing = [[NSProcessInfo processInfo].arguments filteredArrayUsingPredicate:p].count > 0 ;
 
+    if (stubbing) {
+        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"appsnap" ofType:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+        
+        NSError *error;
+        [OHHTTPStubs stubRequestsUsingMocktailsAtPath:@"mocktails" inBundle:bundle error:&error];
+        [OHHTTPStubs onStubActivation:^(NSURLRequest * _Nonnull request, id<OHHTTPStubsDescriptor>  _Nonnull stub, OHHTTPStubsResponse * _Nonnull responseStub) {
+            NSLog(@"[stub] %@",request.URL.absoluteString);
+        }];
+    }
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
