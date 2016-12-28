@@ -32,10 +32,10 @@
     
     //TODO add argument for recording
     
-//    [SWHttpTrafficRecorder sharedRecorder].recordingFormat = SWHTTPTrafficRecordingFormatMocktail ;
-//    NSError *error ;
-//    [[SWHttpTrafficRecorder sharedRecorder] startRecordingAtPath:@"/Users/bastien/Desktop/moktails" error:&error];
-//
+    [SWHttpTrafficRecorder sharedRecorder].recordingFormat = SWHTTPTrafficRecordingFormatMocktail ;
+    NSError *error ;
+    [[SWHttpTrafficRecorder sharedRecorder] startRecordingAtPath:@"/Users/bastien/Desktop/moktails" error:&error];
+
     
     
     NSString *stubArg = @"Appsnap_stubbing";

@@ -387,10 +387,15 @@ static NSString * const SWRecordingLProtocolHandledKey = @"SWRecordingLProtocolH
     [tail appendFormat:@"%@\n", request.HTTPMethod];
     [tail appendFormat:@"%@\n", [self getURLRegexPattern:request]];
     [tail appendFormat:@"%ld\n", (long)response.statusCode];
+    // TODO add base64 in the Content-Type directly
     [tail appendFormat:@"%@%@\n", response.MIMEType, [self toBase64Body:request andResponse:response] ? @";base64": @""];
     NSEnumerator *headerKeys = [response.allHeaderFields keyEnumerator];
     for (NSString *key in headerKeys) {
-        [tail appendFormat:@"%@: %@\n", key, (NSString*)[response.allHeaderFields objectForKey:key]];
+        NSString *value = (NSString*)[response.allHeaderFields objectForKey:key];
+        if ([key isEqualToString:@"Content-Type"] && [self toBase64Body:request andResponse:response]) {
+            value = [value stringByAppendingString:@";base64"];
+        }
+        [tail appendFormat:@"%@: %@\n", key, value];
     }
     
     [tail appendString:@"\n"];

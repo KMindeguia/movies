@@ -1,0 +1,87 @@
+GET
+/3/movie/11\?api_key=.*$
+200
+application/json
+Content-Type: application/json;charset=utf-8
+X-Memc: HIT
+X-Memc-Key: 6d5f35c15200646b0f90ce466b55e69e
+Access-Control-Allow-Origin: *
+X-RateLimit-Reset: 1482924661
+Content-Encoding: gzip
+Server: openresty
+Vary: Accept-Encoding
+Cache-Control: public, max-age=28800
+Date: Wed, 28 Dec 2016 11:30:51 GMT
+Content-Length: 824
+X-RateLimit-Limit: 40
+X-RateLimit-Remaining: 39
+X-Memc-Expires: 5580
+Connection: keep-alive
+Etag: W/"32ff7c530f703fb6ef3592631b305f27"
+X-Memc-Age: 23220
+Status: 200 OK
+
+{
+  "runtime" : 121,
+  "status" : "Released",
+  "backdrop_path" : "\/4iJfYYoQzZcONB9hNzg0J0wWyPH.jpg",
+  "overview" : "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.",
+  "title" : "Star Wars",
+  "vote_count" : 4355,
+  "tagline" : "A long time ago in a galaxy far, far away...",
+  "belongs_to_collection" : {
+    "backdrop_path" : "\/d8duYyyC9J5T825Hg7grmaabfxQ.jpg",
+    "id" : 10,
+    "name" : "Star Wars Collection",
+    "poster_path" : "\/ghd5zOQnDaDW1mxO7R5fXXpZMu.jpg"
+  },
+  "original_title" : "Star Wars",
+  "original_language" : "en",
+  "poster_path" : "\/tvSlBzAdRE29bZe5yYWrJ2ds137.jpg",
+  "production_countries" : [
+    {
+      "name" : "United States of America",
+      "iso_3166_1" : "US"
+    }
+  ],
+  "revenue" : 775398007,
+  "homepage" : "http:\/\/www.starwars.com\/films\/star-wars-episode-iv-a-new-hope",
+  "video" : false,
+  "imdb_id" : "tt0076759",
+  "id" : 11,
+  "release_date" : "1977-03-20",
+  "budget" : 11000000,
+  "popularity" : 19.565817,
+  "genres" : [
+    {
+      "id" : 12,
+      "name" : "Adventure"
+    },
+    {
+      "id" : 28,
+      "name" : "Action"
+    },
+    {
+      "id" : 878,
+      "name" : "Science Fiction"
+    }
+  ],
+  "production_companies" : [
+    {
+      "name" : "Lucasfilm",
+      "id" : 1
+    },
+    {
+      "name" : "Twentieth Century Fox Film Corporation",
+      "id" : 306
+    }
+  ],
+  "adult" : false,
+  "spoken_languages" : [
+    {
+      "name" : "English",
+      "iso_639_1" : "en"
+    }
+  ],
+  "vote_average" : 7.9
+}
