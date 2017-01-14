@@ -13,5 +13,4 @@ addons:
     s3_region: "eu-west-1"
     paths:
       - ./screenshots
-      - ./derivedData/Logs/Test
     debug: true
