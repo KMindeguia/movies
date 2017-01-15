@@ -3,7 +3,7 @@ language: objective-c
 xcode_workspace: Movies.xcworkspace
 xcode_scheme: Movies
 notifications:
-  webhooks: http://appsnap.appsnap-api.57e44a4b.svc.dockerapp.io/baseline?apiKey=fbc79017-e6b2-423b-8542-dbb73714f94a
+  webhooks: http://appsnap.appsnap-api.57e44a4b.svc.dockerapp.io/processBuild?apiKey=fbc79017-e6b2-423b-8542-dbb73714f94a
 before_install:
 - pod install
 - gem install fastlane --no-ri --no-doc --no-document
