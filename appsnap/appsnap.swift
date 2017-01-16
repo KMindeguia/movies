@@ -13,15 +13,6 @@ class appsnap: XCTestCase {
     override func setUp() {
         super.setUp()
         
-//        SWHttpTrafficRecorder.shared().recordingFormat = SWHTTPTrafficRecordingFormat.mocktail
-//        do {
-//            try SWHttpTrafficRecorder.shared().startRecording(atPath: "/Users/bastien/Desktop/moktails")
-//        }
-//        catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-
-        
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
