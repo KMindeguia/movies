@@ -39,9 +39,12 @@
     self.watchTrailerButton.layer.borderColor = [UIColor colorWithRed:0/255.0 green:161/225.0 blue:0/255.0 alpha:1.0].CGColor;
     self.watchTrailerButton.layer.cornerRadius = 15.0f;
     
-    self.bookmarkButton.layer.borderColor =  self.bookmarkButton.titleLabel.textColor.CGColor;
-    self.bookmarkButton.layer.borderWidth = 1.0f;
-    self.bookmarkButton.layer.cornerRadius = 15.0f;
+//    self.bookmarkButton.layer.borderColor =  self.bookmarkButton.titleLabel.textColor.CGColor;
+//    self.bookmarkButton.layer.borderWidth = 1.0f;
+//    self.bookmarkButton.layer.cornerRadius = 15.0f;
+    
+    [super awakeFromNib];
 }
 
 @end
+

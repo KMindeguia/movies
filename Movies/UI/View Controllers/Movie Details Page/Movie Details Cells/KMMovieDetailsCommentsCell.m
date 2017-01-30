@@ -27,6 +27,8 @@
 {
     self.cellImageView.layer.cornerRadius = self.cellImageView.frame.size.width/2;
     self.cellImageView.layer.masksToBounds = YES;
+    
+    [super awakeFromNib];
 }
 
 @end

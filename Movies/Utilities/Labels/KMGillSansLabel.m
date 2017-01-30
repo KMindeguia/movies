@@ -1,6 +1,6 @@
 //
 //  KMGillSansLabel.m
-//  BigCentral
+//
 //
 //  Created by Kevin Mindeguia on 24/06/2013.
 //  Copyright (c) 2013 iKode Ltd. All rights reserved.
@@ -44,7 +44,8 @@
 
 @implementation KMGillSansBoldLabel
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         [self configureWithGillSansFont];
@@ -52,15 +53,20 @@
     return self;
 }
 
-- (void)setFontSize:(CGFloat)size {
+- (void)setFontSize:(CGFloat)size
+{
     self.font = [UIFont gillSansBoldFontWithSize:size];
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib
+{
     [self configureWithGillSansFont];
+    
+    [super awakeFromNib];
 }
 
-- (void)configureWithGillSansFont {
+- (void)configureWithGillSansFont
+{
     self.font = [UIFont gillSansBoldFontWithSize:self.font.pointSize];
 }
 
@@ -74,7 +80,8 @@
 
 @implementation KMGillSansMediumLabel
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         [self configureWithGillSansFont];
@@ -82,15 +89,19 @@
     return self;
 }
 
-- (void)setFontSize:(CGFloat)size {
+- (void)setFontSize:(CGFloat)size
+{
     self.font = [UIFont gillSansMediumFontWithSize:size];
 }
 
 - (void)awakeFromNib{
     [self configureWithGillSansFont];
+    
+    [super awakeFromNib];
 }
 
-- (void)configureWithGillSansFont {
+- (void)configureWithGillSansFont
+{
     self.font = [UIFont gillSansMediumFontWithSize:self.font.pointSize];
 }
 
@@ -106,15 +117,20 @@
     return self;
 }
 
-- (void)setFontSize:(CGFloat)size {
+- (void)setFontSize:(CGFloat)size
+{
     self.font = [UIFont gillSansRegularFontWithSize:size];
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib
+{
     [self configureWithGillSansFont];
+    
+    [super awakeFromNib];
 }
 
-- (void)configureWithGillSansFont {
+- (void)configureWithGillSansFont
+{
     self.font = [UIFont gillSansRegularFontWithSize:self.font.pointSize];
 }
 
@@ -122,7 +138,8 @@
 
 @implementation KMGillSansLightLabel
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         [self configureWithGillSansFont];
@@ -130,15 +147,20 @@
     return self;
 }
 
-- (void)setFontSize:(CGFloat)size {
+- (void)setFontSize:(CGFloat)size
+{
     self.font = [UIFont gillSansLightFontWithSize:size];
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib
+{
     [self configureWithGillSansFont];
+    
+    [super awakeFromNib];
 }
 
-- (void)configureWithGillSansFont {
+- (void)configureWithGillSansFont
+{
     self.font = [UIFont gillSansLightFontWithSize:self.font.pointSize];
 }
 

@@ -32,6 +32,8 @@
     {
         self.moviesDataSource = [[NSArray alloc] init];
     }
+    
+    [super awakeFromNib];
 }
 
 - (void)viewWillAppear:(BOOL)animated
