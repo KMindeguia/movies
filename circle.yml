@@ -3,8 +3,9 @@ machine:
   version: "8.0"
 notify:
   webhooks:
-    # A list of hook hashes, containing the URL field
     - url: http://appsnap.appsnap-api.57e44a4b.svc.dockerapp.io/processBuild?apiKey=5898755c4f10cc01002c2594
 test:
+  commands:
+    - fastlane snapshot --verbose --derived_data_path derivedData --skip_open_summary
   post:
     - aws s3 sync ./screenshots s3://appsnap/bcojan/movies/$CIRCLE_BUILD_NUM/$CIRCLE_BUILD_NUM.1
