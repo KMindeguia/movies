@@ -31,11 +31,11 @@
     
     
     //TODO add argument for recording
-    
-    [SWHttpTrafficRecorder sharedRecorder].recordingFormat = SWHTTPTrafficRecordingFormatMocktail ;
-    NSError *error ;
-    [[SWHttpTrafficRecorder sharedRecorder] startRecordingAtPath:@"/Users/bastien/Desktop/moktails" error:&error];
-
+//    
+//    [SWHttpTrafficRecorder sharedRecorder].recordingFormat = SWHTTPTrafficRecordingFormatMocktail ;
+//    NSError *error ;
+//    [[SWHttpTrafficRecorder sharedRecorder] startRecordingAtPath:@"/Users/bastien/Desktop/moktails" error:&error];
+//
     
     
     NSString *stubArg = @"Appsnap_stubbing";
@@ -48,6 +48,7 @@
         
         NSError *error;
         [OHHTTPStubs stubRequestsUsingMocktailsAtPath:@"mocktails" inBundle:bundle error:&error];
+
         [OHHTTPStubs onStubActivation:^(NSURLRequest * _Nonnull request, id<OHHTTPStubsDescriptor>  _Nonnull stub, OHHTTPStubsResponse * _Nonnull responseStub) {
             NSLog(@"[stub] %@",request.URL.absoluteString);
         }];

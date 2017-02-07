@@ -1,0 +1,11 @@
+machine:
+ xcode:
+  version: "8.0"
+notify:
+  webhooks:
+    - url: http://appsnap.appsnap.3cd5c85a.svc.dockerapp.io/processBuild?apiKey=5898755c4f10cc01002c2594
+test:
+  override:
+    - fastlane snapshot --verbose --derived_data_path derivedData --skip_open_summary
+  post:
+    - aws s3 sync ./screenshots s3://appsnap/bcojan/movies/$CIRCLE_BUILD_NUM/$CIRCLE_BUILD_NUM.1
