@@ -22,7 +22,7 @@ class appsnap: XCTestCase {
         app.launchArguments = ["Appsnap_stubbing"] ;
         setupSnapshot(app)
         app.launch()
-        snapshot("setUp")
+//        snapshot("setUp")
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -31,7 +31,7 @@ class appsnap: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
         
-        snapshot("tearDown")
+//        snapshot("tearDown")
     }
     
     func testExample() {
@@ -48,7 +48,7 @@ class appsnap: XCTestCase {
         
         app.swipeUp()
         
-        snapshot("Rogue One: bottom screen")
+//        snapshot("Rogue One: bottom screen")
         
         //related movies
         XCUIApplication().tables.cells.containing(.staticText, identifier:"View all similar movies").buttons["btn round next"].tap()
@@ -75,9 +75,9 @@ class appsnap: XCTestCase {
         
         snapshot("home screen")
         
-        app.swipeUp()
+//        app.swipeUp()
         
-        snapshot("home screen bottom")
+//        snapshot("home screen bottom")
     }
     
 }
