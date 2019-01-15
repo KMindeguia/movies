@@ -16,7 +16,7 @@ You can follow me on Twitter [@KMindeguia](https://twitter.com/KMindeguia).
 ## App Demo:
 ![Demo GIF Animation](https://raw.githubusercontent.com/KMindeguia/movies/master/Gif%20Demo/demo.gif)
 
-You can play demo at [appetize.io](https://appetize.io/app/va6vwedcp9rn111j1yk5dk9638?device=iphone6&scale=100&orientation=portrait)
+You can try the demo at [appetize.io](https://appetize.io/app/va6vwedcp9rn111j1yk5dk9638?device=iphone6&scale=100&orientation=portrait)
 
 ## Requirements
 - iOS 7.0+
